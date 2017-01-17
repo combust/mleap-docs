@@ -1,15 +1,4 @@
-# Introduction
-
-MLeap is a common runtime and serialization format for entire machine
-learning pipelines. It supports __Spark__, __Scikit-learn__ and __Tensorflow__ for
-training pipelines and exporting them to an __MLeap Bundle__. The
-pipeline can then be deserialized into a Spark ML pipeline, Scikit-learn
-pipeline, Tensorflow graph, or MLeap pipeline for use as a scoring
-engine or general purpose transformer pipeline. MLeap itself offers a
-comprehensive engine for executing pipelines that is very portable
-across the JVM.
-
-## Why MLeap?
+# Why MLeap?
 
 Many companies that use Spark and Scikit-learn have a difficult time
 deploying their models to production API services. Even using Tensorflow
@@ -19,7 +8,7 @@ provides simple interfaces to executing entire ML pipelines, from
 feature transformers to classifiers, regressions, clustering algorithms,
 and neural networks.
 
-### Spark, Scikit-learn and Tensorflow: One Runtime
+## Spark, Scikit-learn and Tensorflow: One Runtime
 
 Mixing and matching ML technologies becomes a simple task. Instead of requiring
 and entire team of developers to make your pipelines production ready,
@@ -28,7 +17,7 @@ needed. Train different pieces of your pipeline using Spark,
 Scikit-learn or Tensorflow, then export them to one MLeap Bundle file
 and deploy it anywhere.
 
-### Common Serialization
+## Common Serialization
 
 In addition to providing a useful execution engine, MLeap Bundles
 provide a common serialization format for a large set of ML feature
@@ -37,7 +26,7 @@ across Spark, Scikit-learn, Tensorflow and MLeap. This means you can
 easily convert pipelines between these technologies depending on where
 you need to execute a pipeline.
 
-### Seamless Integrations
+## Seamless Integrations
 
 For the most part, we do not modify any internal code or require custom
 implementations of transformers in any Spark or Scikit-learn. For
