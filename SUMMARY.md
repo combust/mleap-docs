@@ -1,7 +1,6 @@
 # Summary
 
 * [MLeap Documentation](README.md)
-  * [Why Mleap?](why.md)
   * [Getting Started](getting-started/index.md)
   * [Getting Started with MLeap](getting-started/mleap.md)
   * [Getting Started with Spark](getting-started/spark.md)
@@ -38,7 +37,7 @@
   * [Tensorflow](integration/tensorflow/index.md)
     * [MLeap Transformer](integration/tensorflow/mleap-transformer.md)
     * [Bundle Serialization](integration/tensorflow/bundle-serialization.md)
-    * [Exporting Models](integration/tensorflow/usage.md)
+    * [Using Tensorflow Graphs](integration/tensorflow/usage.md)
   * [Databricks Notebooks](integration/databricks-notebooks.md)
   * [Zeppelin Notebooks](integration/zeppelin-notebooks.md)
   * [Jupyter Notebooks](integration/jupyter-notebooks.md)

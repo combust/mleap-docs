@@ -56,14 +56,14 @@ Say we have an input LeapFrame that has the following data. A scala double and a
 
 | double1 | tensor1 |
 |---|---|
-| 3.0 | [2.0, 1.0, 5.0, 6.0] |
+| 3.0 | [2.0, 1.0, 5.0] |
 
 ### Types
 
 | Field | Data Type |
 |---|---|
-| double1 | DoubleType |
-| tensor1 | TensorType(base = DoubleType, dimensions = Seq(-1)) |
+| double1 | DoubleType() |
+| tensor1 | TensorType(DoubleType(false)) |
 
 If we run this LeapFrame through a Tensorflow transformer that uses the `double1` value to scale the `tensor1` value and we specify we want the scaled output tensor, then the output LeapFrame will look like this:
 
@@ -71,63 +71,18 @@ If we run this LeapFrame through a Tensorflow transformer that uses the `double1
 
 ### Data
 
-<table>
-<thead>
-<tr>
-<th>double1</th>
-<th>tensor1</th>
-<th>raw_tf_tensors</th>
-<th>output1</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>3.0</td>
-<td>[2.0, 1.0, 5.0, 6.0]</td>
-<td>Seq([6.0, 3.0, 15.0])</td>
-<td>[6.0, 3.0, 15.0]</td>
-</tr>
-</tbody>
-</table>
+| double1 | tensor1 | raw_tf_tensors | output1 |
+|---|---|---|---|
+| 3.0 | [2.0, 1.0, 5.0] | Seq([6.0, 3.0, 15.0]) | [6.0, 3.0, 15.0] |
 
 ### Types
 
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Data Type</th>
-<th>Notes</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>double1</td>
-<td>DoubleType</td>
-<td></td>
-</tr>
-
-<tr>
-<td>tensor1</td>
-<td>TensorType(base = DoubleType, dimensions = Seq(-1))</td>
-<td></td>
-</tr>
-
-<tr>
-<td>raw_tf_tensors</td>
-<td>ListType(base = AnyType(false))</td>
-<td>Raw return types unknown, nulls are not allowed</td>
-</tr>
-
-<tr>
-<td>output1</td>
-<td>TensorType(base = DoubleType, dimensions = Seq(-1))</td>
-<td>Underlying type known at this point, and reflected in the LeapFrame</td>
-</tr>
-</tbody>
-</table>
+| Field | Data Type | Notes |
+|---|---|---|
+| double1 | DoubleType() | |
+| tensor1 | TensorType(DoubleType(false)) | |
+| raw_tf_tensors | ListType(AnyType(false))  | Raw return types unknown, nulls are not allowed |
+| output1 | TensorType(DoubleType(false)) | Underlying type known at this point, and reflected in the LeapFrame |
 
 ## Notes
 

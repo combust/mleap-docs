@@ -8,7 +8,7 @@ NOTE: Tensorflow has no listed support here, but it is possible to
 ## Features
 
 | Transformer| Spark | MLeap | Scikit-Learn | TensorFlow |
-|---|:---:|---:|---:|---:|
+|---|:---:|:---:|:---:|:---:|
 | Binarizer | x | x | x | |
 | BucketedRandomProjectionLSH | x | x | | |
 | Bucketizer       | x | x |  | |
@@ -37,12 +37,12 @@ NOTE: Tensorflow has no listed support here, but it is possible to
 | VectorAssembler | x | x | x | |
 | VectorIndexer | x | x | | |
 | VectorSlicer | x | x | | |
-| WordToVector | x | x | | |
+| WordToVector | x | x | | | |
 
 ## Classification
 
 | Transformer | Spark| MLeap | Scikit-Learn  | TensorFlow |
-|---|:---:|---:|---:|---:|
+|---|:---:|:---:|:---:|:---:|
 | DecisionTreeClassifier | x | x | x | |
 | GradientBoostedTreeClassifier | x | x | | |
 | LogisticRegression | x | x | x | |
@@ -51,25 +51,25 @@ NOTE: Tensorflow has no listed support here, but it is possible to
 | OneVsRest | x | x | | |
 | RandomForestClassifier | x | x | x | |
 | SupportVectorMachines | x | x | x | |
-| MultiLayerPerceptron | x | x | | |
+| MultiLayerPerceptron | x | x | | | |
 
 ## Regression
 
 | Transformer | Spark | MLeap | Scikit-Learn | TensorFlow |
-|---|:---:|---:|---:|---:|
+|---|:---:|:---:|:---:|:---:|
 | AFTSurvivalRegression | x | x | | |
 | DecisionTreeRegression | x | x | x | |
 | GeneralizedLinearRegression | x | x | | |
 | GradientBoostedTreeRegression | x | x | | |
 | IsotonicRegression | x | x | | |
 | LinearRegression | x | x | x | |
-| RandomForestRegression | x | x | x | |
+| RandomForestRegression | x | x | x | | |
 
 
 ## Clustering
 
 | Transformer | Spark | MLeap | Scikit-Learn | TensorFlow |
-|---|:---:|---:|---:|---:|
+|---|:---:|:---:|:---:|:---:|
 | BisectingKMeans | x | x | | |
 | GaussianMixtureModel | x | x | | |
 | KMeans | x | x | | |
@@ -77,12 +77,12 @@ NOTE: Tensorflow has no listed support here, but it is possible to
 
 ## Extensions
 | Transformer | Spark | MLeap | Scikit-Learn | TensorFlow | Description |
-|---|:---:|---:|---:|---:|:---|
+|---|:---:|:---:|:---:|:---:|:---|
 | MathUnary | x | x | x | | Simple set of unary mathematical operations |
 | MathBinary | x | x | x | | Simple set of binary mathematical operations |
 
 ## Recommendation
 | Transformer | Spark | MLeap | Scikit-Learn | TensorFlow |
-|---|:---:|---:|---:|---:|
+|---|:---:|:---:|:---:|:---:|
 | ALS | x | | | | |
 

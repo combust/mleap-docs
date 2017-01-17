@@ -7,7 +7,7 @@ to implement some custom ones for full interoperability.
 
 ## Compatible Ops
 
-We maintain a [list of supported ops](https://github.com/combust/mleap/wiki) between Spark, MLeap, Scikit-learn
+We maintain a [list of supported ops](../../core-concepts/transformers/support.html) between Spark, MLeap, Scikit-learn
 and Tensorflow.
 
 ## Serialization
