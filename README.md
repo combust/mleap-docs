@@ -41,3 +41,9 @@ For many use cases, no changes will be required and you can simply
 export to an MLeap Bundle or deploy to a Combust API server to start
 getting immediate use of your pipeline.
 
+### Open Source
+
+MLeap is entirely open source. Our source code is available at
+[https://github.com/combust/mleap](https://github.com/combust/mleap). We also automate
+our tests and deploys with [travis ci](https://travis-ci.org/combust/mleap).
+
