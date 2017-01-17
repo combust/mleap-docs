@@ -11,3 +11,8 @@ easy-to-use manner.
 | MLeap Bundles | Used to store ML pipelines in a common JSON/Protobuf serialization format |
 | MLeap Runtime | Used to execute an ML pipeline in the JVM using lightweight data structures |
 
+This section is meant as an introduction to people who are unfamiliar
+with the basics of machine learning pipelines and working with data
+frames. Although, the sections on MLeap Bundles and the MLeap Runtime should be
+useful to everyone.
+
