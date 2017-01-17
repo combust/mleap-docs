@@ -28,6 +28,7 @@ libraryDependencies += "ml.combust.mleap" %% "mleap-runtime" % "0.5.0"
 </dependency>
 ```
 
-If you want to build from source, check out the
-[instructions](Building+MLeap+from+Source.html).
+1. See [build instructions](./building.html) to build MLeap from source.
+2. See [core concepts](../core-concepts/) for an overview of ML pipelines.
+3. See [basic usage](../basic/) of MLeap to start transforming leap frames.
 
