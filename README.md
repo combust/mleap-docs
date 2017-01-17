@@ -12,6 +12,13 @@ provides simple interfaces to executing entire ML pipelines, from
 feature transformers to classifiers, regressions, clustering algorithms,
 and neural networks.
 
+### Portable Models
+
+Your models are your models. Take them with you wherever you go using
+our MLeap Bundles. Platforms like Microsoft Azure and Google ML can lock
+you into their services package. MLeap allows you to take your models
+with you wherever you go.
+
 ### Spark, Scikit-learn and Tensorflow: One Runtime
 
 Mixing and matching ML technologies becomes a simple task. Instead of requiring
