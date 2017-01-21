@@ -42,9 +42,4 @@
   * [Serialization](mleap-runtime/bundle.md)
   * [Boosting Transform Speed](mleap-runtime/row-transformer.md)
   * [Custom Transformer](mleap-runtime/custom-transformer.md)
-* [MLeap Bundles](mleap-bundle/index.md)
-  * [MLeap](mleap-bundle/mleap.md)
-  * [Spark](mleap-bundle/spark.md)
-  * [PySpark](mleap-bundle/py-spark.md)
-  * [Scikit-learn](mleap-bundle/scikit-learn.md)
 
