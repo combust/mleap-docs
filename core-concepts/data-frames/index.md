@@ -1,7 +1,7 @@
 # Data Frames
 
-Data frames are used to store data during execution of an ML pipeline.
-They are similar to a SQL table, in that they have a schema for storing
+Data Frames are used to store data during execution of an ML pipeline.
+They are similar to a SQL table in that they have a schema for storing
 the data types of every column and they have rows for storing the actual
 values.
 

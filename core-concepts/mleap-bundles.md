@@ -1,10 +1,14 @@
 # MLeap Bundles
 
 MLeap Bundles are a portable file format for serializing and
-deserializing machine learning pipelines. They make it very easy to
-share the results of your training, simply generate a bundle file and
-send it through email to a colleague! Bundles also make deployments
-simple: just export your bundle and load it into your Spark,
+deserializing:
+1. Machine learning data pipelines - any transformer-based data pipeline
+2. Algorithms (Regressions, Tree-Based models, Bayesian models, Neural Nets, Clustering)
+
+Bundles make it very easy to share the results of your training, simply generate a bundle file and
+send it through email to a colleague or just view the metadata of your data pipeline and algorithm! 
+
+Bundles also make deployments simple: just export your bundle and load it into your Spark,
 Scikit-learn, or MLeap-based application.
 
 ## Features of MLeap Bundles

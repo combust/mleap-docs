@@ -7,28 +7,12 @@ simple as a single transformer or quite complex, involving hundreds of
 feature transformers and multiple predictive algorithms.
 
 
-# Simple Pipeline
+# Simple Pipeline Example
 
-A simple pipeline could be taking a set of input columns that contain
-doubles and combining them together into a feature vector which then
-gets fed into a linear regression model.
+The diagram below shows a very simple pipeline that can be serialized to a bundle and then scored using MLeap Runtime. The ideas is that MLeap enables serialization and execution of transformers that operate on continuous and categorical features. A more complicated version of this pipeline may include dimension reduction transformers like PCA and feature selection tranformers like the Chi-Squared selector. 
 
-```scala
-import ml.combust.mleap.core.regression.LinearRegressionModel
-import ml.combust.mleap.runtime.transformer.Pipeline
-import ml.combust.mleap.runtime.transformer.feature.VectorAssembler
-import ml.combust.mleap.runtime.transformer.regression.LinearRegression
-import org.apache.spark.ml.linalg.Vectors
+<img src="../assets/images/simple-pipeline.jpg" alt="Very Simple Pipeline"/>
 
-val assembler = VectorAssembler(uid = "simple_feature_assembler",
-  inputCols = Array("feature1", "feature2", "feature3"),
-  outputCol = "features")
-val linearRegression = LinearRegression(uid = "simple_linear_regression",
-  featuresCol = assembler.outputCol,
-  predictionCol = "prediction",
-  model = LinearRegressionModel(Vectors.dense(1.22, 3.5, 6.7), 3.4))
-val pipeline = Pipeline(uid = "simple_pipeline", Seq(assembler, linearRegression))
-```
 
 # Advanced Pipelines
 

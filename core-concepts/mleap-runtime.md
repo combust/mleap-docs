@@ -13,7 +13,7 @@ pipelines. It has the following features:
 implement their own serializers for it
 5. Serialization formats for leap frames to easily send content across
    the wire
-6. A very fast linear algebra system thanks to [Breeze](https://github.com/scalanlp/breeze) linear algebra
+6. A very fast linear algebra system powred by [BLAS](https://github.com/scalanlp/breeze)
 
-See our [basic usage](../basic) and [advanced usage](../advanced) for more
+See our [MLeap Runtime usage section](../mleap-runtime/index.md) for more
 information on how to use the MLeap Runtime in your application.

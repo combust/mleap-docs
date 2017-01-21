@@ -2,7 +2,7 @@
 
 Transformers offer a basic building block to executing machine learning
 pipelines. A transformer takes data from a data frame, transforms it
-using some operation and outputs one or more new fields to back to the
+using some operation and outputs one or more new fields back to the
 data frame. This is a very simple task, but is at the core of the Spark,
 Scikit-learn, MLeap and Tensorflow execution engines.
 
@@ -26,7 +26,7 @@ Some examples of feature extraction are:
 2. One hot encoding - Converting an integer value to a vector of 1s and
    0s
 3. Feature selection - Running analysis to determine which features are
-   most effective for training a predictive ML algorithm (PCA, CHI2)
+   most effective for training a predictive ML algorithm (i.e. CHI2)
 4. Math - Basic mathematical functions, such as dividing two features by
    each other or taking the log of a feature
 
@@ -50,22 +50,17 @@ See a list of [supported regression models](support.html#regression).
 ## Classification
 
 Classification is used to predict categorical information. An example is
-making a binary prediction of whether or not to give a consumer a loan
-or not. Another example is predicting what type of sound is contained in
-a wav file, or whether or not there is a person in and image. There are
-many algorithms for classification, and neural networks are really great
-at this task.
+making a binary prediction of whether or not to give a consumer a loan. Another example is predicting what type of sound is contained in
+a .wav file, or whether or not there is a person in and image.
 
 [Supported classification models](support.html#classification).
 
 ## Clustering
 
-Clustering is used to assign a label to similar data. It is similar to
+Clustering is used to assign a label to similar data (thus categorizing/clustering it). It is similar to
 classification in that the predictions are discrete values from a set.
-Unlike classification models though, clustering models do not know what
-the labels are ahead of time and instead invent their own set of labels
-during training. This is useful for anomaly detection, feature
-generation, as well as many other useful tasks.
+Unlike classification models though, clustering models are part of the unsupervised family of models and do not operate on labeled data.
+This is useful for feature engineering, anomaly detection, as well as many other tasks.
 
 
 [Supported clustering models](support.html#clustering).
