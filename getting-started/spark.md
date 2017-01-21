@@ -47,3 +47,4 @@ To use MLeap extensions to Spark:
 1. See [build instructions](./building.html) to build MLeap from source.
 2. See [core concepts](../core-concepts/) for an overview of ML pipelines.
 3. See [Spark documentation](http://spark.apache.org/docs/latest/ml-guide.html) to learn how to train ML pipelines in Spark.
+4. See [Demo notebooks](https://github.com/combust/mleap-demo/tree/master/notebooks) on how to use MLeap with PySpark to serialize your pipelines to Bundle.ML and score with MLeap.
