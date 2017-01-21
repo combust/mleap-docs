@@ -116,4 +116,3 @@ val dirBundle = (for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simp
   bundle.loadBundle().get
 }).opt.get
 ```
-
