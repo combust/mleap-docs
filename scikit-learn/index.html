@@ -1,0 +1,958 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Scikit-learn · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bundle.html" />
+    
+    
+    <link rel="prev" href="../py-spark/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MLeap Documentation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../getting-started/">
+            
+                <a href="../getting-started/">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../getting-started/mleap.html">
+            
+                <a href="../getting-started/mleap.html">
+            
+                    
+                    Getting Started with MLeap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../getting-started/spark.html">
+            
+                <a href="../getting-started/spark.html">
+            
+                    
+                    Getting Started with Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../getting-started/py-spark.html">
+            
+                <a href="../getting-started/py-spark.html">
+            
+                    
+                    Getting Started with PySpark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../getting-started/scikit-learn.html">
+            
+                <a href="../getting-started/scikit-learn.html">
+            
+                    
+                    Getting Started with Scikit-learn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../getting-started/tensorflow.html">
+            
+                <a href="../getting-started/tensorflow.html">
+            
+                    
+                    Getting Started with Tensorflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../getting-started/building.html">
+            
+                <a href="../getting-started/building.html">
+            
+                    
+                    Building from Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../core-concepts/">
+            
+                <a href="../core-concepts/">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../core-concepts/data-frames/">
+            
+                <a href="../core-concepts/data-frames/">
+            
+                    
+                    Data Frames
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../core-concepts/data-frames/data-types.html">
+            
+                <a href="../core-concepts/data-frames/data-types.html">
+            
+                    
+                    Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../core-concepts/transformers/">
+            
+                <a href="../core-concepts/transformers/">
+            
+                    
+                    Transformers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../core-concepts/transformers/support.html">
+            
+                <a href="../core-concepts/transformers/support.html">
+            
+                    
+                    Supported Transformers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../core-concepts/pipelines.html">
+            
+                <a href="../core-concepts/pipelines.html">
+            
+                    
+                    Pipelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../core-concepts/mleap-bundles.html">
+            
+                <a href="../core-concepts/mleap-bundles.html">
+            
+                    
+                    MLeap Bundles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../core-concepts/mleap-runtime.html">
+            
+                <a href="../core-concepts/mleap-runtime.html">
+            
+                    
+                    MLeap Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../spark/">
+            
+                <a href="../spark/">
+            
+                    
+                    MLeap-Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../py-spark/">
+            
+                <a href="../py-spark/">
+            
+                    
+                    MLeap-PySpark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Scikit-learn
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="bundle.html">
+            
+                <a href="bundle.html">
+            
+                    
+                    Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tensorflow/">
+            
+                <a href="../tensorflow/">
+            
+                    
+                    Tensorflow
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tensorflow/mleap-transformer.html">
+            
+                <a href="../tensorflow/mleap-transformer.html">
+            
+                    
+                    MLeap Transformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tensorflow/bundle-serialization.html">
+            
+                <a href="../tensorflow/bundle-serialization.html">
+            
+                    
+                    Bundle Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../tensorflow/usage.html">
+            
+                <a href="../tensorflow/usage.html">
+            
+                    
+                    Using Tensorflow Graphs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../mleap-runtime/">
+            
+                <a href="../mleap-runtime/">
+            
+                    
+                    MLeap Runtime
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../mleap-runtime/create-leap-frame.html">
+            
+                <a href="../mleap-runtime/create-leap-frame.html">
+            
+                    
+                    Creating a Leap Frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html">
+            
+                    
+                    Leap Frame Operations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html#insert">
+            
+                    
+                    Insert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html#drop">
+            
+                    
+                    Drop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html#read">
+            
+                    
+                    Read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.4" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html#select">
+            
+                    
+                    Select
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html">
+            
+                    
+                    Storing a Leap Frame
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.3.1" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html#json">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.2" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html#avro">
+            
+                    
+                    Avro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.3" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html#binary">
+            
+                    
+                    Binary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3.4" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html#custom">
+            
+                    
+                    Custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../mleap-runtime/transform-leap-frame.html">
+            
+                <a href="../mleap-runtime/transform-leap-frame.html">
+            
+                    
+                    Transforming a Leap Frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../mleap-runtime/bundle.html">
+            
+                <a href="../mleap-runtime/bundle.html">
+            
+                    
+                    Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../mleap-runtime/row-transformer.html">
+            
+                <a href="../mleap-runtime/row-transformer.html">
+            
+                    
+                    Boosting Transform Speed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html">
+            
+                    
+                    Custom Transformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Scikit-learn</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="mleap-scikit-learn-integration">MLeap Scikit-Learn Integration</h1>
+<p>MLeap provides serialization functionality to Scikit Pipelines, Feature Unions and Transformers to Bundle.Ml in such a way that we maintain parity between Scikit and Spark transformers&apos; functionality.
+There are two main use-cases for MLeap-Scikit:</p>
+<ol>
+<li>Serialize Scikit Pipelines and execute using MLeap Runtime</li>
+<li>Serialize Scikit Pipelines and deseriazialize with Spark</li>
+</ol>
+<p>As mentioned earlier, MLeap Runtime is a scala-only library today and we plan to add Python bindings in the future. However, it is enough to be able to execute pipelines and models without the dependency on Scikit, and Numpy.</p>
+<h2 id="extending-scikit-with-mleap">Extending Scikit with MLeap</h2>
+<p>There are a couple of important differences in how scikit transformers work and how Spark transformers work:</p>
+<ol>
+<li>Spark transformers all come with <code>name</code>, <code>op</code>, <code>inputCol</code>, and <code>outputCol</code> attributes, scikit does not</li>
+<li>Spark transformers can opperate on a vector, where as scikit operates on a n-dimensional arrays and matrices</li>
+<li>Spark, because it is written in Scala, makes it easy to add implicit functions and attributes, with scikit it is a bit trickier and requires use of setattr()</li>
+</ol>
+<p>Because of these additional complexities, there are a few paradigms we have to follow when extending scikit transformers with MLeap.
+First is we have to initialize each transformer to include:</p>
+<ul>
+<li>Op: Unique <code>op</code> name - this is used as a link to Spark-based transformers (i.e. a Standard Scaler in scikit is the same as in Spark, so we have an op called <code>standard_scaler</code> to represent it)</li>
+<li>Name: A unique name for each transformer. For example, if you have multiple Standard Scaler objects, each needs to be assigned a unque name</li>
+<li>Input Column: Strictly for serialization, we set what the input column is</li>
+<li>Output Column: Strictly for serialization, we set what the output column is</li>
+</ul>
+<h3 id="scikit-transformer-and-pipeline-with-mleap">Scikit Transformer and Pipeline with MLeap</h3>
+<p>Let&apos;s first initialize all of the required libraries</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Initialize MLeap libraries before Scikit/Pandas</span>
+<span class="hljs-keyword">import</span> mleap.sklearn.preprocessing.data
+<span class="hljs-keyword">import</span> mleap.sklearn.pipeline
+<span class="hljs-keyword">from</span> mleap.sklearn.preprocessing.data <span class="hljs-keyword">import</span> FeatureExtractor
+
+<span class="hljs-comment"># Import Scikit Transformer(s)</span>
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> StandardScaler
+<span class="hljs-keyword">from</span> sklearn.pipeline <span class="hljs-keyword">import</span> Pipeline
+</code></pre>
+<p>Then let&apos;s create a test DataFrame in Pandas</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Create a pandas DataFrame</span>
+df = pd.DataFrame(np.random.randn(<span class="hljs-number">10</span>, <span class="hljs-number">5</span>), columns=[<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>, <span class="hljs-string">&apos;d&apos;</span>, <span class="hljs-string">&apos;e&apos;</span>])
+</code></pre>
+<p>Let&apos;s define two transformers, a feature extractor that will extract only the features we want to scale and Standard Scaler, which will perform the standard normal scaling operation.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Initialize a FeatureExtractor, which subselects only the features we want</span>
+<span class="hljs-comment"># to run the Standard Scaler against</span>
+input_features = [<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>, <span class="hljs-string">&apos;d&apos;</span>]
+output_vector_name = <span class="hljs-string">&apos;unscaled_continuous_features&apos;</span> <span class="hljs-comment"># Used only for serialization purposes</span>
+output_features = [<span class="hljs-string">&quot;{}_scaled&quot;</span>.format(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> input_features]
+
+feature_extractor_tf = FeatureExtractor(input_features, 
+                                        output_vector_name, 
+                                        output_features)
+
+
+<span class="hljs-comment"># Define the Standard Scaler as we normally would</span>
+standard_scaler_tf = StandardScaler(with_mean=<span class="hljs-keyword">True</span>,
+                                    with_std=<span class="hljs-keyword">True</span>)
+
+<span class="hljs-comment"># Execute ML-Init to add the require attributes to the transformer object</span>
+<span class="hljs-comment"># Op and Name will be initialized automatically</span>
+standard_scaler_tf.mlinit(input_features=output_vector_name,
+                          output_features=[<span class="hljs-string">&apos;sclaed_continuous_features&apos;</span>])
+</code></pre>
+<p>Now that we have our transformers defined, we assemble them into a pipeline and execute it on our data frame</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Now let&apos;s create a small pipeline using the Feature Extractor and the Standard Scaler</span>
+standard_scaler_pipeline = Pipeline([(feature_extractor_tf.name, feature_extractor_tf),
+                                     (standard_scaler_tf.name, standard_scaler_tf)])
+standard_scaler_pipeline.mlinit()
+
+<span class="hljs-comment"># Now let&apos;s run it on our test DataFrame</span>
+standard_scaler_pipeline.fit_transform(df)
+
+<span class="hljs-comment"># Printed output</span>
+array([[ <span class="hljs-number">0.2070446</span> ,  <span class="hljs-number">0.30612846</span>, <span class="hljs-number">-0.91620529</span>],
+       [ <span class="hljs-number">0.81463009</span>, <span class="hljs-number">-0.26668287</span>,  <span class="hljs-number">1.95663995</span>],
+       [<span class="hljs-number">-0.94079041</span>, <span class="hljs-number">-0.18882131</span>, <span class="hljs-number">-0.0462197</span> ],
+       [<span class="hljs-number">-0.43931405</span>,  <span class="hljs-number">0.13214763</span>, <span class="hljs-number">-0.10700743</span>],
+       [ <span class="hljs-number">0.43992551</span>, <span class="hljs-number">-0.2985418</span> , <span class="hljs-number">-0.89093752</span>],
+       [<span class="hljs-number">-0.15391539</span>, <span class="hljs-number">-2.20828471</span>,  <span class="hljs-number">0.5361159</span> ],
+       [<span class="hljs-number">-1.07689244</span>,  <span class="hljs-number">1.61019861</span>,  <span class="hljs-number">1.42868885</span>],
+       [ <span class="hljs-number">0.87874789</span>,  <span class="hljs-number">1.43146482</span>, <span class="hljs-number">-0.44362038</span>],
+       [<span class="hljs-number">-1.60105094</span>, <span class="hljs-number">-0.40130005</span>, <span class="hljs-number">-0.10754886</span>],
+       [ <span class="hljs-number">1.87161513</span>, <span class="hljs-number">-0.11630878</span>, <span class="hljs-number">-1.40990552</span>]])
+</code></pre>
+<h2 id="combining-transformers">Combining Transformers</h2>
+<p>We just demonstrated how to apply a transformer to a set of features, but the output of that opperation is just a n-dimensional array that we would have to join back to our original data if we wanted to use it in say a regression model. Let&apos;s show how we can combine data from multiple transformers using Feature Unions.</p>
+<p>First, go ahead and create another transformers, a MinMaxScaler on the remaining two features of the data frame:</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> sklearn.preprocessing <span class="hljs-keyword">import</span> MinMaxScaler
+
+input_features_min_max = [<span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;e&apos;</span>]
+output_vector_name_min_max = <span class="hljs-string">&apos;unscaled_continuous_features_min_max&apos;</span> <span class="hljs-comment"># Used only for serialization purposes</span>
+output_features_min_max = [<span class="hljs-string">&quot;{}_min_maxscaled&quot;</span>.format(x) <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> input_features_min_max]
+
+feature_extractor_min_max_tf = FeatureExtractor(input_features_min_max, 
+                                                output_vector_name_min_max, 
+                                                output_features_min_max)
+
+
+<span class="hljs-comment"># Define the MinMaxScaler as we normally would</span>
+min_maxscaler_tf = MinMaxScaler()
+
+<span class="hljs-comment"># Execute ML-Init to add the require attributes to the transformer object</span>
+<span class="hljs-comment"># Op and Name will be initialized automatically</span>
+min_maxscaler_tf.mlinit(input_features=output_vector_name_min_max,
+                          output_features=[<span class="hljs-string">&apos;min_max_scaled_continuous_features&apos;</span>])
+
+<span class="hljs-comment"># Assemble our MinMaxScaler Pipeline</span>
+min_max_scaler_pipeline = Pipeline([(feature_extractor_min_max_tf.name, feature_extractor_min_max_tf),
+                                    (min_maxscaler_tf.name, min_maxscaler_tf)])
+min_max_scaler_pipeline.mlinit()
+
+<span class="hljs-comment"># Now let&apos;s run it on our test DataFrame</span>
+min_max_scaler_pipeline.fit_transform(df)
+
+array([[ <span class="hljs-number">0.58433367</span>,  <span class="hljs-number">0.72234095</span>],
+       [ <span class="hljs-number">0.21145259</span>,  <span class="hljs-number">0.72993807</span>],
+       [ <span class="hljs-number">0.52661493</span>,  <span class="hljs-number">0.59771784</span>],
+       [ <span class="hljs-number">0.29403088</span>,  <span class="hljs-number">0.19431993</span>],
+       [ <span class="hljs-number">0.48838789</span>,  <span class="hljs-number">1.</span>        ],
+       [ <span class="hljs-number">1.</span>        ,  <span class="hljs-number">0.46456522</span>],
+       [ <span class="hljs-number">0.36402459</span>,  <span class="hljs-number">0.43669119</span>],
+       [ <span class="hljs-number">0.</span>        ,  <span class="hljs-number">0.74182958</span>],
+       [ <span class="hljs-number">0.60312285</span>,  <span class="hljs-number">0.</span>        ],
+       [ <span class="hljs-number">0.33707035</span>,  <span class="hljs-number">0.39792128</span>]])
+</code></pre>
+<p>Finaly, let&apos;s combine the two pipelines using a Feature Union. Note that you do not have to run the <code>fit`` or</code>fit_transform`` method on the pipeline before assembling the Feature Union.</p>
+<pre><code class="lang-python"><span class="hljs-comment"># Import MLeap extension to Feature Unions</span>
+<span class="hljs-keyword">import</span> mleap.sklearn.feature_union
+
+<span class="hljs-comment"># Import Feature Union</span>
+<span class="hljs-keyword">from</span> sklearn.pipeline <span class="hljs-keyword">import</span> FeatureUnion
+
+feature_union = FeatureUnion([
+        (standard_scaler_pipeline.name, standard_scaler_pipeline),
+        (min_max_scaler_pipeline.name, min_max_scaler_pipeline)
+        ])
+feature_union.mlinit()
+
+<span class="hljs-comment"># Create pipeline out of the Feature Union</span>
+feature_union_pipeline = Pipeline([(feature_union.name, feature_union)])
+feature_union_pipeline.mlinit()
+
+<span class="hljs-comment"># Execute it on our data frame</span>
+feature_union_pipeline.fit_transform(df)
+
+array([[ <span class="hljs-number">0.2070446</span> ,  <span class="hljs-number">0.30612846</span>, <span class="hljs-number">-0.91620529</span>,  <span class="hljs-number">0.58433367</span>,  <span class="hljs-number">0.72234095</span>],
+       [ <span class="hljs-number">0.81463009</span>, <span class="hljs-number">-0.26668287</span>,  <span class="hljs-number">1.95663995</span>,  <span class="hljs-number">0.21145259</span>,  <span class="hljs-number">0.72993807</span>],
+       [<span class="hljs-number">-0.94079041</span>, <span class="hljs-number">-0.18882131</span>, <span class="hljs-number">-0.0462197</span> ,  <span class="hljs-number">0.52661493</span>,  <span class="hljs-number">0.59771784</span>],
+       [<span class="hljs-number">-0.43931405</span>,  <span class="hljs-number">0.13214763</span>, <span class="hljs-number">-0.10700743</span>,  <span class="hljs-number">0.29403088</span>,  <span class="hljs-number">0.19431993</span>],
+       [ <span class="hljs-number">0.43992551</span>, <span class="hljs-number">-0.2985418</span> , <span class="hljs-number">-0.89093752</span>,  <span class="hljs-number">0.48838789</span>,  <span class="hljs-number">1.</span>        ],
+       [<span class="hljs-number">-0.15391539</span>, <span class="hljs-number">-2.20828471</span>,  <span class="hljs-number">0.5361159</span> ,  <span class="hljs-number">1.</span>        ,  <span class="hljs-number">0.46456522</span>],
+       [<span class="hljs-number">-1.07689244</span>,  <span class="hljs-number">1.61019861</span>,  <span class="hljs-number">1.42868885</span>,  <span class="hljs-number">0.36402459</span>,  <span class="hljs-number">0.43669119</span>],
+       [ <span class="hljs-number">0.87874789</span>,  <span class="hljs-number">1.43146482</span>, <span class="hljs-number">-0.44362038</span>,  <span class="hljs-number">0.</span>        ,  <span class="hljs-number">0.74182958</span>],
+       [<span class="hljs-number">-1.60105094</span>, <span class="hljs-number">-0.40130005</span>, <span class="hljs-number">-0.10754886</span>,  <span class="hljs-number">0.60312285</span>,  <span class="hljs-number">0.</span>        ],
+       [ <span class="hljs-number">1.87161513</span>, <span class="hljs-number">-0.11630878</span>, <span class="hljs-number">-1.40990552</span>,  <span class="hljs-number">0.33707035</span>,  <span class="hljs-number">0.39792128</span>]])
+</code></pre>
+<h2 id="serialize-to-zip-file">Serialize to Zip File</h2>
+<p>In order to serialize to a zip file, make sure the URI begins with <code>jar:file</code> and ends with a <code>.zip</code>.</p>
+<p>For example <code>jar:file:/tmp/mleap-bundle.zip</code>.</p>
+<p>Note that you do have to fit your pipeline before serializing.</p>
+<h3 id="json-format">JSON Format</h3>
+<p>Setting <code>init=True</code> tells the serializer that we are creating a bundle instead of just serializing the transformer.</p>
+<pre><code class="lang-python">feature_union_pipeline.serialize_to_bundle(<span class="hljs-string">&apos;/tmp&apos;</span>, <span class="hljs-string">&apos;jar:file:/tmp/mleap-bundle.zip&apos;</span>, init=<span class="hljs-keyword">True</span>)
+</code></pre>
+<h3 id="protobuf-format">Protobuf Format</h3>
+<p>Coming Soon</p>
+<h3 id="mixed-format">Mixed Format</h3>
+<p>Coming Soon</p>
+<h3 id="deserializing">Deserializing</h3>
+<p>Coming Soon</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../py-spark/" class="navigation navigation-prev " aria-label="Previous page: MLeap-PySpark">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bundle.html" class="navigation navigation-next " aria-label="Next page: Serialization">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Scikit-learn","level":"1.5","depth":1,"next":{"title":"Serialization","level":"1.5.1","depth":2,"path":"scikit-learn/bundle.md","ref":"scikit-learn/bundle.md","articles":[]},"previous":{"title":"MLeap-PySpark","level":"1.4","depth":1,"path":"py-spark/index.md","ref":"py-spark/index.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"scikit-learn/index.md","mtime":"2017-01-22T19:33:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-01-22T20:12:36.792Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
