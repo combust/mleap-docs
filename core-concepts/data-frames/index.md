@@ -36,6 +36,40 @@ engine or small-batch predictions. Leap frames can be abstracted over
 Spark data frames, and so they do not lose their ability to act as an
 efficient batch-mode data store as well.
 
+### Example Leap Frame
+
+Here is an example leap frame in JSON, it comes from our [AirBnB demo](https://github.com/combust/mleap-demo/blob/master/notebooks/airbnb-price-regression.ipynb):
+
+```json
+{
+  "schema": {
+    "fields": [{
+      "name": "state",
+      "type": "string"
+    }, {
+      "name": "bathrooms",
+      "type": "double"
+    }, {
+      "name": "square_feet",
+      "type": "double"
+    }, {
+      "name": "bedrooms",
+      "type": "double"
+    }, {
+      "name": "review_scores_rating",
+      "type": "double"
+    }, {
+      "name": "room_type",
+      "type": "string"
+    }, {
+      "name": "cancellation_policy",
+      "type": "string"
+    }]
+  },
+  "rows": [["NY", 2.0, 1250.0, 3.0, 50.0, "Entire home/apt", "strict"]]
+}
+```
+
 ## Tensorflow
 
 [Tensorflow](https://www.tensorflow.org/) does not have data frames like Spark, Scikit-learn and MLeap.
