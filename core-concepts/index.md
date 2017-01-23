@@ -1,6 +1,6 @@
 # Core Concepts
 
-MLeap uses several core building blocks to deployo your pipelines in an
+MLeap uses several core building blocks to deploy your pipelines in an
 easy-to-use manner.
 
 | Concept | Description |

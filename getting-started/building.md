@@ -59,7 +59,7 @@ the Tensorflow Java jar to our local maven2 repository.
 
 ### Compile/Install Tensorflow
 
-Tensorflow has a great set of isntructions for compiling and installing.
+Tensorflow has a great set of instructions for compiling and installing.
 
 1. [Tensorflow](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/g3doc/get_started/os_setup.md)
 2. [Tensorflow Java Bindings](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/java).

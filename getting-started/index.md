@@ -20,10 +20,10 @@ A typical MLeap workflow consists of 3 parts:
 
 ### Training
 
-MLeap is designed to have minimal impact on how you build your ML pipelines today. 
+MLeap is designed to have minimal impact on how you build your ML pipelines today.
 We want you to write your scala or python code in the same way you do today, with minimial additional needed to support MLeap functionality.
 
-As you will see from the basic usage section, most often all you have to do is import some MLeap libraries and that is it (except for scikit-learn)*[]: 
+As you will see from the basic usage section, most often all you have to do is import some MLeap libraries and that is it (except for scikit-learn).
 
 
 ### Serialization

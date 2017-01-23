@@ -3,7 +3,7 @@
 MLeap provides serialization functionality to Scikit Pipelines, Feature Unions and Transformers to Bundle.Ml in such a way that we maintain parity between Scikit and Spark transformers' functionality.
 There are two main use-cases for MLeap-Scikit:
 1. Serialize Scikit Pipelines and execute using MLeap Runtime
-2. Serialize Scikit Pipelines and deseriazialize with Spark
+2. Serialize Scikit Pipelines and deserialize with Spark
 
 As mentioned earlier, MLeap Runtime is a scala-only library today and we plan to add Python bindings in the future. However, it is enough to be able to execute pipelines and models without the dependency on Scikit, and Numpy.
 
@@ -53,21 +53,21 @@ input_features = ['a', 'c', 'd']
 output_vector_name = 'unscaled_continuous_features' # Used only for serialization purposes
 output_features = ["{}_scaled".format(x) for x in input_features]
 
-feature_extractor_tf = FeatureExtractor(input_features, 
-                                        output_vector_name, 
+feature_extractor_tf = FeatureExtractor(input_features,
+                                        output_vector_name,
                                         output_features)
 
 
 # Define the Standard Scaler as we normally would
 standard_scaler_tf = StandardScaler(with_mean=True,
                                     with_std=True)
-                                 
+
 # Execute ML-Init to add the require attributes to the transformer object
 # Op and Name will be initialized automatically
 standard_scaler_tf.mlinit(input_features=output_vector_name,
                           output_features=['sclaed_continuous_features'])
 ```
-                       
+
 Now that we have our transformers defined, we assemble them into a pipeline and execute it on our data frame
 
 ```python
@@ -105,19 +105,19 @@ input_features_min_max = ['b', 'e']
 output_vector_name_min_max = 'unscaled_continuous_features_min_max' # Used only for serialization purposes
 output_features_min_max = ["{}_min_maxscaled".format(x) for x in input_features_min_max]
 
-feature_extractor_min_max_tf = FeatureExtractor(input_features_min_max, 
-                                                output_vector_name_min_max, 
+feature_extractor_min_max_tf = FeatureExtractor(input_features_min_max,
+                                                output_vector_name_min_max,
                                                 output_features_min_max)
 
 
 # Define the MinMaxScaler as we normally would
 min_maxscaler_tf = MinMaxScaler()
-                                 
+
 # Execute ML-Init to add the require attributes to the transformer object
 # Op and Name will be initialized automatically
 min_maxscaler_tf.mlinit(input_features=output_vector_name_min_max,
                           output_features=['min_max_scaled_continuous_features'])
-                          
+
 # Assemble our MinMaxScaler Pipeline
 min_max_scaler_pipeline = Pipeline([(feature_extractor_min_max_tf.name, feature_extractor_min_max_tf),
                                     (min_maxscaler_tf.name, min_maxscaler_tf)])
@@ -138,7 +138,7 @@ array([[ 0.58433367,  0.72234095],
        [ 0.33707035,  0.39792128]])
 ```
 
-Finaly, let's combine the two pipelines using a Feature Union. Note that you do not have to run the `fit`` or `fit_transform`` method on the pipeline before assembling the Feature Union.
+Finaly, let's combine the two pipelines using a Feature Union. Note that you do not have to run the `fit` or `fit_transform` method on the pipeline before assembling the Feature Union.
 
 ```python
 # Import MLeap extension to Feature Unions

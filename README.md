@@ -10,21 +10,21 @@ Many companies that use Spark and Scikit-learn have a difficult time
 deploying their research ML/data pipelines models to production API services. Even using Tensorflow
 can be difficult to set these services up if a company does not wish to
 use Python in their API stack or does not use Google ML Cloud. MLeap
-provides simple interfaces to executing entire ML pipelines, from
+provides simple interfaces to execute entire ML pipelines, from
 feature transformers to classifiers, regressions, clustering algorithms,
 and neural networks.
 
 ### Portable Models
 
 Your models are your models. Take them with you wherever you go using
-our MLeap Bundles. Platforms like Microsoft Azure and Google ML can lock
+MLeap Bundles. Platforms like Microsoft Azure and Google ML can lock
 you into their services package. MLeap allows you to take your models
 with you wherever you go.
 
 ### Spark, Scikit-learn and Tensorflow: One Runtime
 
 Mixing and matching ML technologies becomes a simple task. Instead of requiring
-and entire team of developers to make research pipelines production ready,
+an entire team of developers to make research pipelines production ready,
 simply export to an MLeap Bundle and run your pipeline wherever it is
 needed.
 
@@ -32,7 +32,9 @@ Other benefits of a unified runtime:
 * Train different pieces of your pipeline using Spark,
 Scikit-learn or Tensorflow, then export them to one MLeap Bundle file
 and deploy it anywhere
-* If you're using Scikit for R&D, but Spark comes out with a better algorithm, you can export your scikit ML pipeline to Spark, train the new model in Spark and then deploy to production using the MLeap runtime
+* If you're using Scikit for R&D, but Spark comes out with a better algorithm,
+you can export your Scikit ML pipeline to Spark, train the new model in Spark
+and then deploy to production using the MLeap runtime
 
 <img src="assets/images/single-runtime.jpg" alt="Unified Runtime"/>
 

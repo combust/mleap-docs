@@ -19,8 +19,8 @@ for which columns and how transformations should be handled.
 | Short | 16-bit integer values supported by all platforms, MLeap and Spark only support signed versions |
 | Integer | 32-bit integer values supported by all platforms, MLeap and Spark only support signed versions |
 | Long | 64-bit integer values are supported by all platforms, MLeap and Spark only support signed versions |
-| Float | 32-bit folating point values are supported by all platforms |
-| Double | 64-bit folating point values are supported by all platforms |
+| Float | 32-bit floating point values are supported by all platforms |
+| Double | 64-bit floating point values are supported by all platforms |
 | Boolean | 8-bit value representing true or false, can be packed into 1-bit if needed |
 | String | A series of characters, either null-terminated or length prefixed depending on platform |
 | Array | Sequence of elements of any of the above basic types |
