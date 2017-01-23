@@ -1,4 +1,4 @@
-# Tensorflow MLeap Transformer
+# Tensorflow MLeap Integration
 
 MLeap supports integration with pre-trained Tensorflow graphs. MLeap uses the Swig bindings provided with Tensorflow to call down to Tensorflow C++ libraries after converting from MLeap data types to the required C++ tensor types.
 

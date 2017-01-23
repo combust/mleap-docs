@@ -1,20 +1,16 @@
 # Tensorflow Bundle Serialization
 
-In order to provide tight integration with Tensorflow, MLeap will
-provide its own set of C++ ops that correspond to MLeap operations. We
-will use ops that are already provided as much as possible, but may need
-to implement some custom ones for full interoperability.
+When serializing your Tensorflow transformers to an MLeap Bundle, we
+will store the Tensorflow graph as a Protobuf file. In order to
+Tensorflow graphs, you should first freeze your Tensorflow graph using
+[freeze_graph](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/tools/freeze_graph.py).
+This will ensure that everything needed to execute your graph is in the
+graph definition file.
 
-## Compatible Ops
+## Sample MLeap Tensorflow Bundle
 
-We maintain a [list of supported ops](../../core-concepts/transformers/support.html) between Spark, MLeap, Scikit-learn
-and Tensorflow.
+Download an example MLeap Bundle that uses Tensorflow to add two floats
+together: [MLeap Tensorflow Bundle](../assets/bundles/tensorflow-model.zip).
 
-## Serialization
-
-In addition to providing the library of Tensorflow ops, we will also
-provide a way to serialize Tensorflow graphs to Bundle.ML and
-deserialize Bundle.ML to Tensorflow graphs. This will allow for the
-direct export of Spark, Scikit-learn, and MLeap pipelines to Tensorflow
-for use on mobile devices and other applications.
-
+NOTE: right click and "Save As...", Gitbook prevents directly clicking
+on the link.
