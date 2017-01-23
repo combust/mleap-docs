@@ -18,10 +18,10 @@ Scikit-learn, or MLeap-based application.
 3. Serialize as pure JSON, pure Protobuf, or mixed mode
 4. Highly extensible, including support for custom data types and easy
    integration with new transformers
-   
+
 ## Bundle Structure
 
-   
+
 ## Common Format For Spark, Scikit-Learn, TensorFlow
 
 MLeap provides a serialization format for common transformers that are found in Spark, Scikit and TF. For example, consider the Standard Scaler trasnformer (`tf.random_normal_initializer` in TensorFlow). It performs the same opperation on all three platforms so in theory can be serialized, deserialized and used interchangeably between them.
@@ -91,3 +91,6 @@ tests, which ensure that MLeap transformers and Spark transformers
 produce exactly the same outputs.
 
 <a href="../assets/bundles/spark-parity.zip" download>MLeap/Spark Parity Bundle Examples</a>
+
+NOTE: right click and "Save As...", Gitbook prevents directly clicking
+on the link.

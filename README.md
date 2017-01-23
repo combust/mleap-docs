@@ -26,7 +26,7 @@ with you wherever you go.
 Mixing and matching ML technologies becomes a simple task. Instead of requiring
 and entire team of developers to make research pipelines production ready,
 simply export to an MLeap Bundle and run your pipeline wherever it is
-needed. 
+needed.
 
 Other benefits of a unified runtime:
 * Train different pieces of your pipeline using Spark,
