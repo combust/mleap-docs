@@ -43,7 +43,8 @@ from mleap.sklearn.ensemble import forest
 For more information on how to use MLeap extensions to Scikit:
 
 1. See [core concepts](../core-concepts/) for an overview of ML pipelines.
-2. See [Scikit-learn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) to learn how to train ML pipelines in Python.
-3. See Scikit-learn documentation on how to use [Feature Unions](http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.FeatureUnion.html) with pipelines
-4. See [Demo notebook](https://github.com/combust/mleap-demo/) on how to use Scikit and MLeap to serialize your pipeline to Bundle.ml
-5. [Learn](../basic/transofrm-leap-frame.md) how to transform a [DataFrame](../core-concepts/data-frames/index.md) using MLeap.
+2. Detailed guide to [MLeap and Scikit-Learn](../scikit-learn/index.md)
+3. See [Scikit-learn documentation](http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html) to learn how to train ML pipelines in Python.
+4. See Scikit-learn documentation on how to use [Feature Unions](http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.FeatureUnion.html) with pipelines
+5. See [Demo notebook](https://github.com/combust/mleap-demo/) on how to use Scikit and MLeap to serialize your pipeline to Bundle.ml
+6. [Learn](../basic/transofrm-leap-frame.md) how to transform a [DataFrame](../core-concepts/data-frames/index.md) using MLeap.
