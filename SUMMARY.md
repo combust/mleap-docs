@@ -19,7 +19,7 @@
 * [MLeap-Spark](spark/index.md)
 * [MLeap-PySpark](py-spark/index.md)
 * [Scikit-learn](scikit-learn/index.md)
-  * [Serialization](scikit-learn/bundle.md)
+  * [Transformers Guide](scikit-learn/transformers.md)
 * [Tensorflow](tensorflow/index.md)
   * [MLeap Transformer](tensorflow/mleap-transformer.md)
   * [Bundle Serialization](tensorflow/bundle-serialization.md)
