@@ -15,6 +15,8 @@
     * [Supported Transformers](core-concepts/transformers/support.md)
   * [Pipelines](core-concepts/pipelines.md)
   * [MLeap Bundles](core-concepts/mleap-bundles.md)
+    * [Structure](core-concepts/mleap-bundles.md#bundle-structure)
+    * [Examples](core-concepts/mleap-bundles.md#mleap-bundle-examples)
   * [MLeap Runtime](core-concepts/mleap-runtime.md)
 * [MLeap-Spark](spark/index.md)
 * [MLeap-PySpark](py-spark/index.md)
