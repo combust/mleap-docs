@@ -199,3 +199,7 @@ Coming Soon
 ### Deserializing
 
 Coming Soon
+
+## Demos
+
+Complete demos available on github that demonstrates full usage of Transformers, Pipelines, Feature Unions and serialization.
