@@ -42,7 +42,6 @@
   * [Boosting Transform Speed](mleap-runtime/row-transformer.md)
   * [Custom Transformer](mleap-runtime/custom-transformer.md)
 * [Demos](demos/index.md)
-  * [Basic](demos/basic.md)
   * [MNIST](demos/mnist.md)
 * [Notebooks](notebooks/index.md)
   * [Zeppelin](notebooks/zeppelin.md)
