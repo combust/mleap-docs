@@ -1,7 +1,10 @@
 # Basic Usage
 
-MLeap aims to be as simple as possible to use, here are some of our core
-principles when we design our APIs.
+MLeap Runtime is a lightweight, yet highly optimized, execution engine for Machine Learning Pipelines. The goal of MLeap Runtime is to provide production-level serving/scoring infrastructure for common machine learning frameworks, without the dependency on their core libraries. Meaning:
+* Execute Spark ML Pipelines without the dependency on the spark context, distributed data frames, and costly execution plans
+* Execute Scikit-learn pipelines without the dependency on numpy, pandas, scipy or other libraries used in training 
+
+MLeap aims to be as simple as possible to use, and here are our design principles:
 
 1. Use monadic programming as much as possible
 2. Stay clean with automatic resource management
