@@ -64,7 +64,7 @@ one_hot_encoder_pipeline_x0 = Pipeline([
                                          (one_hot_encoder_tf.name, one_hot_encoder_tf)
                                         ])
 
-one_hot_encoder_pipeline_x0.minit()
+one_hot_encoder_pipeline_x0.mlinit()
 
 # Execute our LabelEncoder + OneHotEncoder pipeline on our dataframe
 one_hot_encoder_pipeline_x0.fit_transform(df)
@@ -98,7 +98,7 @@ one_hot_encoder_pipeline_x0 = Pipeline([
                                          (one_hot_encoder_tf.name, one_hot_encoder_tf)
                                         ])
 
-one_hot_encoder_pipeline_x0.minit()
+one_hot_encoder_pipeline_x0.mlinit()
 
 # Execute our LabelEncoder + OneHotEncoder pipeline on our dataframe
 one_hot_encoder_pipeline_x0.fit_transform(df)
