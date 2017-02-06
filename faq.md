@@ -1,15 +1,22 @@
 # MLeap Frequently Asked Questions
 
+## Does MLeap Support Custom Transformers?
+
+Absolutely - our goal is to make writing custom transformers easy. Writing a custom transformer is exactly the same as writing a transformer for Spark and MLeap. The only difference is that we pre-package all of the out-of-the-box Spark transformers with `mleap-runtime` and `mleap-spark`.
+
+For documentation on writing custom transformers, see the [Custom Transformers](mleap-runtime/custom-transformer.md) page.
+
 ## What is MLeap Runtime's Inference Performance?
 
 MLeap is optimized to deliver execution of ML Pipelines in microseconds (1/1000 of milliseconds, because we get asked to clarify this).
 
-Actual executions speed will depend on how many nodes are in your pipeline, but we standardize benchmarking on our AirBnb pipeline and test it against using the `SparkContext` with a `LocalRelation` DataFrame. 
+Actual executions speed will depend on how many nodes are in your pipeline, but we standardize benchmarking on our AirBnb pipeline and test it against using the `SparkContext` with a `LocalRelation` DataFrame.
 The two sets of benchmarks share the same feature pipeline, comprised of vector assemblers, standard scalers, string indexers, one-hot-encoders, but at the end execute:
+
 * Linear Regression: 6.2 microseconds (.0062 milliseconds) vs 106 milliseconds with Spark LocalRelation
 * Random Forest: 6.8 microseconds (0.0068 milliseconds) vs 101 milliseconds with Spark LocalRelation
 
-MLeap Random Forest Transform Speed:
+### MLeap Random Forest Transform Speed:
 
 Random Forest: ~6.8 microseconds (68/10000)
 
@@ -26,6 +33,8 @@ Random Forest: ~6.8 microseconds (68/10000)
 | 9000 | 61.769202 | 7 |
 | 10000 | 68.646654 | 7 |
 
+### Run Our Benchmarks
+
 To run our benchmarks, or to see how to test your own, see our [MLeap Benchmark](https://github.com/combust/mleap/tree/master/mleap-benchmark) project.
 
 More benchmarks can be found on the [MLeap Benchmarks's README](https://github.com/combust/mleap/blob/master/mleap-benchmark/README.md).
@@ -33,19 +42,12 @@ More benchmarks can be found on the [MLeap Benchmarks's README](https://github.c
 ## Why use MLeap Bundles and not PMML or Other Serialization Frameworks?
 
 MLeap serialization is built with the following goals and requirements in mind:
+
 1. It should be easy for developers to add `custom transformers` in Scala and Java (we are adding Python and C support as well)
 2. Serialization format should be flexible and meet state-of-the-art performance requirements. MLeap serializes to protobuf 3, making scalable deployment and execution of large pipelines (thousands of features) and models like Random Forests and Neural Nets possible
 3. Serialization should be optimized for ML Transformers and Pipelines
 4. Serialization should be accessible for all environments and platforms, including low-level languages like C, C++ and Rust
-5. Provide a common serialization framework for Spark, Scikit, and TensorFlow transformers (ex: a standard scaler executes the same on any framework) 
-
-
-## Does MLeap Support Custom Transformers?
-
-Absolutely - our goal is to make writing custom transformers easy. Writing a custom transformer is exactly the same as writing a transformer for Spark. The only difference is that we pre-package Spark transformers for MLeap runtime.
-
-For documentation on writing custom transformers, see the [Custom Transformers](http://mleap-docs.combust.ml/mleap-runtime/custom-transformer.html) page.
-
+5. Provide a common serialization framework for Spark, Scikit, and TensorFlow transformers (ex: a standard scaler executes the same on any framework)
 
 ## Is MLeap Ready for Production?
 
@@ -60,7 +62,7 @@ need sub-5 millisecond response times for many requests. MLeap offers execution 
 
 ## Is Spark MLlib Supported?
 
-Spark ML Pipelines already support a lot of the same transformers and models that are part of MLlib. In addition, we offer a wrapper around MLlib SupportVectorMachine in our `mleap-spark-extension` module. 
+Spark ML Pipelines already support a lot of the same transformers and models that are part of MLlib. In addition, we offer a wrapper around MLlib SupportVectorMachine in our `mleap-spark-extension` module.
 If you find that something is missing from Spark ML that is found in MLlib, please let us know or contribute your own wrapper to MLeap.
 
 ## How Does TensorFlow Integration Work?
@@ -70,7 +72,7 @@ SWIG wrappers. We may eventually change this to use JavaCPP bindings, or
 even take an erlang-inspired approach and have a separate Tensorflow
 process for executing Tensorflow graphs. However we end up doing it, the
 interface will stay the same and you will always be able to transform
-your leap frames with the TensorflowTransformer.
+your leap frames with the `TensorflowTransformer`.
 
 ## When Will Scikit-Learn Be Supported?
 
