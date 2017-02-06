@@ -52,3 +52,4 @@
   * [Zeppelin](notebooks/zeppelin.md)
   * [Jupyter](notebooks/jupyter.md)
   * [Databricks](notebooks/databricks.md)
+* [Frequently Asked Questions](faq.md)
