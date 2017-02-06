@@ -53,7 +53,7 @@ MLeap serialization is built with the following goals and requirements in mind:
 
 Yes, MLeap is used in production at a number of companies and industries ranging from AdTech, Automotive, Deep Learning (integrating Spark ML Pipelines with TF Inception model), and market research.
 
-MLeap 0.5.0 release provides a stable serialization format for ML Pipeline Tensors and graphs. Backwards compatibility will officially be guaranteed in version 1.0.0, but we do not foresee any major structural changes going forward.
+MLeap 0.5.0 release provides a stable serialization format and runtime API for ML Pipelines. Backwards compatibility will officially be guaranteed in version 1.0.0, but we do not foresee any major structural changes going forward.
 
 ## Why Not Use a SparkContext with a LocalRelation DataFrame to Transform?
 
