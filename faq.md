@@ -41,40 +41,29 @@ MLeap serialization is built with the following goals and requirements in mind:
 
 ## Is MLeap Ready for Production?
 
-MLeap is used in production in a number of organizations:
-* AdTech: Execute ~1,000 models in sub-30ms to determine which ads to present
-* Deep Learning: MLeap serving is used to detect speech, industrial sounds, and image detection (extended TF models)
-* Automotive: Used to serialize and serve ML Pipelines that are retrained on an hourly basis
+Yes, MLeap is used in production at a number of companies, in industries ranging from AdTech, Automotive, Deep Learning (integrating Spark ML Pipelines with TF Inception model), and market research.
 
 MLeap 0.5.0 release provides a stable serialization format for ML Pipeline Tensors and graphs. Backwards compatibility will officially be guaranteed in version 1.0.0, but we do not foresee any major structural changes going forward.
 
-## Why Not Use a SparkContext and LocalRelation to Transform?
+## Why Not Use a SparkContext with a LocalRelation DataFrame to Transform?
 
-This is too slow for many people's needs. Marketing platforms especially
-often times will need sub 5 millisecond response times for many
-requests. MLeap offers execution of fairly complex pipelines in
-submillisecond times. MLeap is so fast because we build on great
-technology, like Scala Breeze libraries for linear algebra.
+APIs relying on Spark Context can be optimized to process queries in ~100ms, and that is often too slow for many enterprise needs. For example, marketing platforms
+need sub-5 millisecond response times for many requests. MLeap offers execution of complex pipelines with sub-millisecond performance. MLeap's performance is attributed to supporting technologies like the Scala Breeze library for linear algebra.
 
 ## Is Spark MLlib Supported?
 
-Not directly. We do offer a wrapper around MLlib SupportVectorMachine in
-our `mleap-spark-extension` module. If you find that something is
-missing from Spark ML that is found in MLlib, please let us know or
-contribute your own wrapper to MLeap!
+Spark ML Pipelines already support a lot of the same transformers and models that are part of MLlib. In addition, we offer a wrapper around MLlib SupportVectorMachine in our `mleap-spark-extension` module. 
+If you find that something is missing from Spark ML that is found in MLlib, please let us know or contribute your own wrapper to MLeap.
 
 ## Does it Support Custom Transformers?
 
-Absolutely. Every transformer in MLeap is essentially a custom
+Absolutely - our goal is to make writing custom transformers very easy. Every transformer in MLeap is already a custom
 transformer, we just happen to do all of the configuration for the
 builtin transformers out of the box so you can use them easily.
 
-We are currently working on making our documentation great, so check in
-here for detailed instructions on making your own transformers:
+For documentation on writing custom transformers, see the [Custom Transformers](http://mleap-docs.combust.ml/mleap-runtime/custom-transformer.html) page.
 
-[MLeap Custom Transformers](http://mleap-docs.combust.ml/mleap-runtime/custom-transformer.html)
-
-## How Does Tensorflow Integration Work?
+## How Does TensorFlow Integration Work?
 
 Presently Tensorflow integration works by using the official Tensorflow
 SWIG wrappers. We may eventually change this to use JavaCPP bindings, or
@@ -82,3 +71,10 @@ even take an erlang-inspired approach and have a separate Tensorflow
 process for executing Tensorflow graphs. However we end up doing it, the
 interface will stay the same and you will always be able to transform
 your leap frames with the TensorflowTransformer.
+
+## When Will Scikit-Learn Be Supported?
+
+Scikit-Learn support is currently in beta and we are working to support the following functionality in the initial release in early March:
+* Support for all scikit tranformers that have a corresponding Spark transformer
+* Provide both serialization and de-serialization of MLeap Bundles
+* Provide basic pandas support: Group-by aggregations, joins
