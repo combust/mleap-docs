@@ -109,7 +109,7 @@ know where the bundle is.
 // Deserialize a zip bundle
 // Use Scala ARM to make sure resources are managed properly
 val zipBundle = (for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-mixed.zip"))) yield {
-  bundle.loadBundle().get
+  bundle.loadMleapBundle().get
 }).opt.get
 ```
 
@@ -119,7 +119,7 @@ val zipBundle = (for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/
 // Deserialize a directory bundle
 // Use Scala ARM to make sure resources are managed properly
 val dirBundle = (for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-mixed-dir"))) yield {
-  bundle.loadBundle().get
+  bundle.loadMleapBundle().get
 }).opt.get
 ```
 
