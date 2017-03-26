@@ -65,7 +65,7 @@ standard_scaler_tf = StandardScaler(with_mean=True,
 # Execute ML-Init to add the require attributes to the transformer object
 # Op and Name will be initialized automatically
 standard_scaler_tf.mlinit(input_features=output_vector_name,
-                          output_features=['sclaed_continuous_features'])
+                          output_features='scaled_continuous_features')
 ```
 
 Now that we have our transformers defined, we assemble them into a pipeline and execute it on our data frame
@@ -116,7 +116,7 @@ min_maxscaler_tf = MinMaxScaler()
 # Execute ML-Init to add the require attributes to the transformer object
 # Op and Name will be initialized automatically
 min_maxscaler_tf.mlinit(input_features=output_vector_name_min_max,
-                          output_features=['min_max_scaled_continuous_features'])
+                          output_features='min_max_scaled_continuous_features')
 
 # Assemble our MinMaxScaler Pipeline
 min_max_scaler_pipeline = Pipeline([(feature_extractor_min_max_tf.name, feature_extractor_min_max_tf),
