@@ -66,7 +66,7 @@ looks like:
   "uid": "7b4eaab4-7d84-4f52-9351-5de98f9d5d04",
   "name": "pipeline_43ec54dff5b2",
   "format": "mixed",
-  "version": "0.5.0"
+  "version": "0.6.0"
 }
 ```
 
