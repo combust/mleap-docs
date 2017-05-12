@@ -86,7 +86,7 @@ val featurePipeline = new Pipeline().setStages(Array(vector_assembler, stringInd
 // Transform the raw data with the feature pipeline and persist it
 val featureModel = featurePipeline.fit(dataset)
 
-val datasetWithFeatures = featureModel.transform(df_subset)
+val datasetWithFeatures = featureModel.transform(dataset)
 
 // Select only the data needed for training and persist it
 val datasetPcaFeaturesOnly = datasetWithFeatures.select(stringIndexer.getOutputCol, pca.getOutputCol)
