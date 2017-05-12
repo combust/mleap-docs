@@ -25,8 +25,14 @@ Some terms before we begin:
 import org.apache.spark.ml.feature.{VectorAssembler,StringIndexer,IndexToString, Binarizer}
 import org.apache.spark.ml.classification.{RandomForestClassificationModel, RandomForestClassifier}
 import org.apache.spark.ml.evaluation.{MulticlassClassificationEvaluator}
-import org.apache.spark.ml.{Pipeline,PipelineModel}
+import org.apache.spark.ml.{Pipeline,PipelineModel}  
 import org.apache.spark.ml.feature.PCA
+
+// MLeap/Bundle.ML Serialization Libraries
+import ml.combust.mleap.spark.SparkSupport._
+import resource._
+import ml.combust.bundle.BundleFile
+import org.apache.spark.ml.bundle.SparkBundleContext
 
 val datasetPath = "./mleap-demo/data/mnist/mnist_train.csv"
 var dataset = spark.sqlContext.read.format("com.databricks.spark.csv").
@@ -50,26 +56,26 @@ The original data is hosted on [Yann LeCun's website](http://yann.lecun.com/exdb
 ```scala
 // Define Dependent and Independent Features
 val predictionCol = "label"
-val labels = Seq("0","1","2","3","4","5","6","7","8","9")
+val labels = Seq("0","1","2","3","4","5","6","7","8","9")  
 val pixelFeatures = (0 until 784).map(x => s"x$x").toArray
 
 val layers = Array[Int](pixelFeatures.length, 784, 800, labels.length)
 
-val vector_assembler = new VectorAssembler().
-  setInputCols(featureColumns).
-  setOutputCol("features")
+val vector_assembler = new VectorAssembler()  
+  .setInputCols(pixelFeatures)
+  .setOutputCol("features")
 
-val stringIndexer = new StringIndexer().
-  setInputCol(predictionCol).
-  setOutputCol("label_index").
-  fit(dataset)
-
-
-val binarizer = new Binarizer().
-  setInputCol(vector_assembler.getOutputCol).
-  setThreshold(127.5).
-  setOutputCol("binarized_features")
-
+val stringIndexer = { new StringIndexer()  
+  .setInputCol(predictionCol)
+  .setOutputCol("label_index")
+  .fit(dataset)
+}
+  
+val binarizer = new Binarizer()  
+  .setInputCol(vector_assembler.getOutputCol)
+  .setThreshold(127.5)
+  .setOutputCol("binarized_features")
+  
 val pca = new PCA().
   setInputCol(binarizer.getOutputCol).
   setOutputCol("pcaFeatures").
@@ -111,9 +117,9 @@ import org.apache.spark.ml.mleap.SparkUtil
 val pipeline = SparkUtil.createPipelineModel(uid = "pipeline", Array(featureModel, rfModel))
 
 val sbc = SparkBundleContext()
-for(bf <- managed(BundleFile("jar:file:/tmp/mnist.model.rf.zip"))) {
+for(bf <- managed(BundleFile("jar:file:/tmp/mnist-spark-pipeline.zip"))) {
         pipeline.writeBundle.save(bf)(sbc).get
-      }
+}
 ```
 
 ### Deserialize to MLeap and Score New Data
