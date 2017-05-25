@@ -60,3 +60,4 @@
   * [Jupyter](notebooks/jupyter.md)
   * [Databricks](notebooks/databricks.md)
 * [Frequently Asked Questions](faq.md)
+* [Troubleshooting](troubleshooting.md)

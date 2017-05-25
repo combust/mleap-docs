@@ -64,4 +64,3 @@ MLeap is entirely open source. Our source code is available at
 [https://github.com/combust/mleap](https://github.com/combust/mleap). We also automate
 our tests and deploys with [travis ci](https://travis-ci.org/combust/mleap).
 
-
