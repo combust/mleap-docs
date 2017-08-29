@@ -14,7 +14,7 @@ For a full list of supported scikit-transformers see the [supported transformers
 To add MLeap to your Scikit project, just pip install MLeap
 
 ```bash
-pip install mleap-python
+pip install mleap
 ```
 
 Then in your python environment import MLeap extensions to any Scikit transformers you plan to serialize:
