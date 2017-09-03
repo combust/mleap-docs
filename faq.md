@@ -74,13 +74,6 @@ process for executing Tensorflow graphs. However we end up doing it, the
 interface will stay the same and you will always be able to transform
 your leap frames with the `TensorflowTransformer`.
 
-## When Will Scikit-Learn Be Supported?
-
-Scikit-Learn support is currently in beta and we are working to support the following functionality in the initial release in early March:
-* Support for all scikit tranformers that have a corresponding Spark transformer
-* Provide both serialization and de-serialization of MLeap Bundles
-* Provide basic pandas support: Group-by aggregations, joins
-
 ## How Can I Contribute?
 
 * Contribute an Estimator/Transformer from Spark or your own custom transformer
