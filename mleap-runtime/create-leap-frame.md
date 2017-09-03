@@ -4,15 +4,15 @@ Let's create a leap frame to hold our data.
 
 ```scala
 import ml.combust.mleap.runtime._
-import ml.combust.mleap.runtime.types._
+import ml.combust.mleap.core.types._
 
 // Create a schema. Returned as a Try monad to ensure that there
 // Are no duplicate field names
-val schema: StructType = StructType(StructField("a_string", StringType()),
-  StructField("a_double", DoubleType()),
-  StructField("a_float", FloatType()),
-  StructField("an_int", IntegerType()),
-  StructField("a_long", LongType())).get
+val schema: StructType = StructType(StructField("a_string", ScalarType.String),
+  StructField("a_double", ScalarType.Double),
+  StructField("a_float", ScalarType.Float),
+  StructField("an_int", ScalarType.Int),
+  StructField("a_long", ScalarType.Long)).get
 
 // Create a dataset to contain all of our values
 // This dataset has two rows
