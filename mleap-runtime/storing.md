@@ -15,14 +15,14 @@ not suit your usage needs.
 All serialization examples will use this leap frame.
 
 ```scala
-val schema = StructType(StructField("features", TensorType(DoubleType())),
-  StructField("name", StringType()),
-  StructField("list_data", ListType(StringType())),
-  StructField("nullable_double", DoubleType(true)),
-  StructField("float", FloatType(false)),
-  StructField("byte_tensor", TensorType(ByteType(false))),
-  StructField("short_list", ListType(ShortType(false))),
-  StructField("nullable_string", StringType(true))).get
+val schema = StructType(StructField("features", TensorType(BasicType.Double)),
+  StructField("name", ScalarType.String),
+  StructField("list_data", ListType(BasicType.String)),
+  StructField("nullable_double", ScalarType(BasicType.Double, true)),
+  StructField("float", ScalarType.Float),
+  StructField("byte_tensor", TensorType(BasicType.Byte)),
+  StructField("short_list", ListType(BasicType.Short)),
+  StructField("nullable_string", ScalarType(BasicType.String, true))).get
 val dataset = LocalDataset(Row(Tensor.denseVector(Array(20.0, 10.0, 5.0)),
   "hello", Seq("hello", "there"),
   Option(56.7d), 32.4f,
@@ -70,5 +70,4 @@ for(bytes <- frame.writer("ml.combust.mleap.binary").toBytes();
 
 ## Custom
 
-It is possible to create custom serializers for leap frames. Here is
-how.
+It is possible to create custom serializers for leap frames.
