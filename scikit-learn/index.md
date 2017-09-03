@@ -53,9 +53,9 @@ input_features = ['a', 'c', 'd']
 output_vector_name = 'unscaled_continuous_features' # Used only for serialization purposes
 output_features = ["{}_scaled".format(x) for x in input_features]
 
-feature_extractor_tf = FeatureExtractor(input_features,
-                                        output_vector_name,
-                                        output_features)
+feature_extractor_tf = FeatureExtractor(input_scalars=input_features,
+                                        output_vector=output_vector_name,
+                                        output_vector_items=output_features)
 
 
 # Define the Standard Scaler as we normally would
@@ -64,7 +64,7 @@ standard_scaler_tf = StandardScaler(with_mean=True,
 
 # Execute ML-Init to add the require attributes to the transformer object
 # Op and Name will be initialized automatically
-standard_scaler_tf.mlinit(input_features=output_vector_name,
+standard_scaler_tf.mlinit(prior_tf=feature_extractor_tf,
                           output_features='scaled_continuous_features')
 ```
 
@@ -105,9 +105,9 @@ input_features_min_max = ['b', 'e']
 output_vector_name_min_max = 'unscaled_continuous_features_min_max' # Used only for serialization purposes
 output_features_min_max = ["{}_min_maxscaled".format(x) for x in input_features_min_max]
 
-feature_extractor_min_max_tf = FeatureExtractor(input_features_min_max,
-                                                output_vector_name_min_max,
-                                                output_features_min_max)
+feature_extractor_min_max_tf = FeatureExtractor(input_scalars=input_features_min_max,
+                                                output_vector=output_vector_name_min_max,
+                                                output_vector_items=output_features_min_max)
 
 
 # Define the MinMaxScaler as we normally would
@@ -115,7 +115,7 @@ min_maxscaler_tf = MinMaxScaler()
 
 # Execute ML-Init to add the require attributes to the transformer object
 # Op and Name will be initialized automatically
-min_maxscaler_tf.mlinit(input_features=output_vector_name_min_max,
+min_maxscaler_tf.mlinit(prior_tf=feature_extractor_min_max_tf,
                           output_features='min_max_scaled_continuous_features')
 
 # Assemble our MinMaxScaler Pipeline
@@ -189,10 +189,6 @@ feature_union_pipeline.serialize_to_bundle('/tmp', 'jar:file:/tmp/mleap-bundle.z
 ```
 
 ### Protobuf Format
-
-Coming Soon
-
-### Mixed Format
 
 Coming Soon
 

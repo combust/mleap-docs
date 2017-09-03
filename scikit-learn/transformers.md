@@ -15,13 +15,13 @@ Here is what an example Pipeline looks like for a `LabelEncoder`
 df = pd.DataFrame(np.array([ ['Alice', 32], ['Jack', 18], ['Bob',34]]), columns=['name', 'age'])
 
 # Define our feature extractor
-feature_extractor_tf = FeatureExtractor(input_features=['name'], 
+feature_extractor_tf = FeatureExtractor(input_scalars=['name'], 
                                         output_vector='name_continuous_feature', 
                                         output_vector_items=['name_label_encoded'])
 
 # Label Encoder for x1 Label 
 label_encoder_tf = LabelEncoder()
-label_encoder_tf.mlinit(input_features = feature_extractor_tf.output_vector, output_features='name_label_le')
+label_encoder_tf.mlinit(input_features = feature_extractor_tf.output_vector_items, output_features='name_label_le')
 
 # Reshape the output of the LabelEncoder to N-by-1 array
 reshape_le_tf = ReshapeArrayToN1()
@@ -51,10 +51,8 @@ We'll continue the example above to demonstrate how the out-of-the-box Scikit On
 ```python
 ## Vector Assembler for x1 One Hot Encoder
 one_hot_encoder_tf = OneHotEncoder(sparse=False) # Make sure to set sparse=False
-one_hot_encoder_tf.mlinit(input_features = label_encoder_tf.output_features, output_features = '{}_one_hot_encoded'.format(label_encoder_tf.output_features))
+one_hot_encoder_tf.mlinit(prior_tf=label_encoder_tf, output_features = '{}_one_hot_encoded'.format(label_encoder_tf.output_features))
 #
-##To Dense
-to_dense_tf = ToDense(one_hot_encoder_tf.output_features)
 
 # Construct our pipeline
 one_hot_encoder_pipeline_x0 = Pipeline([
@@ -85,10 +83,8 @@ from mleap.sklearn.extensions.data import OneHotEncoder
 
 ## Vector Assembler for x1 One Hot Encoder
 one_hot_encoder_tf = OneHotEncoder(sparse=False, drop_last=True) # Make sure to set sparse=False
-one_hot_encoder_tf.mlinit(input_features = label_encoder_tf.output_features, output_features = '{}_one_hot_encoded'.format(label_encoder_tf.output_features))
+one_hot_encoder_tf.mlinit(prior_tf=label_encoder_tf, output_features = '{}_one_hot_encoded'.format(label_encoder_tf.output_features))
 #
-##To Dense
-to_dense_tf = ToDense(one_hot_encoder_tf.output_features)
 
 # Construct our pipeline
 one_hot_encoder_pipeline_x0 = Pipeline([
