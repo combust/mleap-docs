@@ -17,8 +17,7 @@ Scikit-learn, or MLeap-based application.
 1. Serialize to a directory or a zip file
 2. Entirely JSON and Protobuf-based format
 3. Serialize as pure JSON, pure Protobuf, or mixed mode
-4. Highly extensible, including support for custom data types and easy
-   integration with new transformers
+4. Highly extensible, including easy integration with new transformers
 
 ## Common Format For Spark, Scikit-Learn, TensorFlow
 
@@ -65,8 +64,9 @@ looks like:
 {
   "uid": "7b4eaab4-7d84-4f52-9351-5de98f9d5d04",
   "name": "pipeline_43ec54dff5b2",
-  "format": "mixed",
-  "version": "0.7.0"
+  "timestamp": "2017-09-03T17:41:25.206",
+  "format": "json",
+  "version": "0.8.0"
 }
 ```
 
@@ -76,6 +76,7 @@ looks like:
 3. `format` is the serialization format used to serialize this bundle
 4. `version` is a reference to the version of MLeap used to serialize
    the bundle
+5. `timestamp` defines when the bundle was serialized
 
 ### model.json
 
@@ -85,13 +86,9 @@ For the pipeline:
 {
   "op": "pipeline",
   "attributes": {
-    "nodes": {
-      "type": {
-        "type": "list",
-        "base": "string"
-      },
-      "value": ["strIdx_ac9c3f9c6d3a", "oneHot_4b815730d602", "vecAssembler_9eb71026cd11", "linReg_7a946be681a8"]
-    }
+  "nodes": {
+    "type": "list",
+    "string": ["strIdx_ac9c3f9c6d3a", "oneHot_4b815730d602", "vecAssembler_9eb71026cd11", "linReg_7a946be681a8"]
   }
 }
 
@@ -104,22 +101,18 @@ For the linear regression:
   "op": "linear_regression",
   "attributes": {
     "coefficients": {
-      "type": {
-        "type": "tensor",
-        "tensor": {
-          "base": "double"
-        }
+      "double": [7274.194347379634, 4326.995162668048, 9341.604695180558, 1691.794448740186, 2162.2199731255423, 2342.150297286721, 0.18287261938061752],
+      "shape": {
+        "dimensions": [{
+          "size": 7,
+          "name": ""
+        }]
       },
-      "value": {
-        "values": [7274.194347379634, 4326.995162668048, 9341.604695180558, 1691.794448740186, 2162.2199731255423, 2342.150297286721, 0.18287261938061752],
-        "dimensions": [7]
-      }
+      "type": "tensor"
     },
     "intercept": {
-      "type": "double",
-      "value": 8085.6026142683095
+      "double": 8085.6026142683095
     }
-  }
 }
 ```
 
