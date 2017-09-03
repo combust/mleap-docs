@@ -62,14 +62,6 @@ for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-protobuf.z
 }
 ```
 
-### Mixed Format
-
-```scala
-for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-mixed.zip"))) {
-  pipeline.writeBundle.format(SerializationFormat.Mixed).save(bundle)
-}
-```
-
 ## Serialize to Directory
 
 In order to serialize to a directory, make sure the URI begins with
@@ -93,14 +85,6 @@ for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-protobuf-dir")
 }
 ```
 
-### Mixed Format
-
-```scala
-for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-mixed-dir"))) {
-  pipeline.writeBundle.format(SerializationFormat.Mixed).save(bundle)
-}
-```
-
 ## Deserializing
 
 Deserializing is just as easy as serializing. You don't need to know the
@@ -112,7 +96,7 @@ know where the bundle is.
 ```scala
 // Deserialize a zip bundle
 // Use Scala ARM to make sure resources are managed properly
-val zipBundle = (for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-mixed.zip"))) yield {
+val zipBundle = (for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-json.zip"))) yield {
   bundle.loadSparkBundle().get
 }).opt.get
 ```
@@ -122,7 +106,7 @@ val zipBundle = (for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/
 ```scala
 // Deserialize a directory bundle
 // Use Scala ARM to make sure resources are managed properly
-val dirBundle = (for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-mixed-dir"))) yield {
+val dirBundle = (for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-json-dir"))) yield {
   bundle.loadSparkBundle().get
 }).opt.get
 ```
