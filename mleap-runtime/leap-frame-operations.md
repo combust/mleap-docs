@@ -42,7 +42,7 @@ output some optionally null values in our leap frame.
 
 ```scala
 // Insert some values into the leap frame
-val leapFrame3 = leapFrame.withOutput("optional_double", "a_double", "an_int") {
+val leapFrame3 = leapFrame.withOutput("optional_int", "a_double", "an_int") {
   (d: Double, i: Int) =>
     if(i > 42) {
       Some(777)
@@ -66,7 +66,7 @@ println(optionalInts.mkString("\n"))
 Drop a field from the leap frame.
 
 ```scala
-assert(leapFrame.schema.hasField("a_double")
+assert(leapFrame.schema.hasField("a_double"))
 for(lf <- leapFrame.dropField("a_double")) {
   assert(!lf.schema.hasField("a_double"))
 }
