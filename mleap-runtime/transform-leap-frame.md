@@ -8,8 +8,7 @@ transformer.
 ```scala
 // Create a StringIndexer that knows how to index the two strings
 // In our leap frame
-val stringIndexer = StringIndexer(inputCol = "a_string",
-  outputCol = "a_string_index",
+val stringIndexer = StringIndexer(shape = NodeShape.scalar(inputCol = "a_string", outputCol = "a_string_index"),
   model = StringIndexerModel(Seq("Hello, MLeap!", "Another row")))
 
 // Transform our leap frame using the StringIndexer transformer
@@ -33,24 +32,28 @@ linear regression.
 
 ```scala
 // Create our one hot encoder
-val oneHotEncoder = OneHotEncoder(inputCol = "a_string_index",
-  outputCol = "a_string_oh",
+val oneHotEncoder = OneHotEncoder(shape = NodeShape.vector(1, 2, 
+                     inputCol = "a_string_index",
+                     outputCol = "a_string_oh"),
   model = OneHotEncoderModel(2, dropLast = false))
 
 // Assemble some features together for use
 // By our linear regression
-val featureAssembler = VectorAssembler(inputCols = Array(oneHotEncoder.outputCol, "a_double"),
-  outputCol = "features")
+val featureAssembler = VectorAssembler(
+     shape = NodeShape().withInput("input0", "a_string_oh").
+     withInput("input1", "a_double").withStandardOutput("features"),
+     model = VectorAssemblerModel(Seq(TensorShape(2), ScalarShape())))
 
 // Create our linear regression
 // It has two coefficients, as the one hot encoder
 // Outputs vectors of size 2
-val linearRegression = LinearRegression(featuresCol = featureAssembler.outputCol,
-  predictionCol = "prediction",
+val linearRegression = LinearRegression(shape = NodeShape.regression(3),
   model = LinearRegressionModel(Vectors.dense(2.0, 3.0, 6.0), 23.5))
 
 // Create a pipeline from all of our transformers
-val pipeline = Pipeline(transformers = Seq(stringIndexer, oneHotEncoder, featureAssembler, linearRegression))
+val pipeline = Pipeline(
+      shape = NodeShape(),
+      model = PipelineModel(Seq(stringIndexer, oneHotEncoder, featureAssembler, linearRegression)))
 
 // Transform our leap frame using the pipeline
 val predictions = (for(lf <- pipeline.transform(leapFrame);
