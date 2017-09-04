@@ -80,7 +80,7 @@ NOTE: Tensorflow has no listed support here, but it is possible to
 |---|:---:|:---:|:---:|:---:|:---|
 | MathUnary | x | x | x | | Simple set of unary mathematical operations |
 | MathBinary | x | x | x | | Simple set of binary mathematical operations |
-| StringMap | x | x | x | | Maps a string label to a double |
+| StringMap | x | x | x | | Maps a string to a double |
 
 ## Recommendation
 | Transformer | Spark | MLeap | Scikit-Learn | TensorFlow |
