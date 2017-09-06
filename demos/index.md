@@ -23,7 +23,7 @@ import org.apache.spark.sql._
 import org.apache.spark.sql.functions._
 import resource._
 
-  val datasetName = "./mleap-docs/asserts/spark-demo.csv"
+  val datasetName = "./mleap-docs/assets/spark-demo.csv"
 
   val dataframe: DataFrame = spark.sqlContext.read.format("csv")
     .option("header", true)
