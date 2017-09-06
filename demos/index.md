@@ -52,7 +52,8 @@ import resource._
   }
 ```
 
-Dataset used for training can be found [here](../assets/spark-demo.csv)
+Dataset used for training can be found [here](../assets/spark-demo.csv).
+
 NOTE: right click and "Save As...", Gitbook prevents directly clicking on the link.
 
 ## Import and MLeap Bundle
