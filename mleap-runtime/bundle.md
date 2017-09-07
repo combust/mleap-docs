@@ -20,18 +20,22 @@ import resource._
 
 // Create a sample pipeline that we will serialize
 // And then deserialize using various formats
-val stringIndexer = StringIndexer(inputCol = "a_string",
-  outputCol = "a_string_index",
+val stringIndexer = StringIndexer(
+  shape = NodeShape.scalar(inputCol = "a_string", outputCol = "a_string_index"),
   model = StringIndexerModel(Seq("Hello, MLeap!", "Another row")))
-val oneHotEncoder = OneHotEncoder(inputCol = "a_string_index",
-  outputCol = "a_string_oh",
+val oneHotEncoder = OneHotEncoder(
+  shape = NodeShape.vector(1, 2, inputCol = "a_string_index", outputCol = "a_string_oh"),
   model = OneHotEncoderModel(2, dropLast = false))
-val featureAssembler = VectorAssembler(inputCols = Array(oneHotEncoder.outputCol, "a_double"),
-  outputCol = "features")
-val linearRegression = LinearRegression(featuresCol = featureAssembler.outputCol,
-  predictionCol = "prediction",
+val featureAssembler = VectorAssembler(
+  shape = NodeShape().withInput("input0", "a_string_oh").
+          withInput("input1", "a_double").withStandardOutput("features"),
+  model = VectorAssemblerModel(Seq(TensorShape(2), ScalarShape())))
+val linearRegression = LinearRegression(
+  shape = NodeShape.regression(3),
   model = LinearRegressionModel(Vectors.dense(2.0, 3.0, 6.0), 23.5))
-val pipeline = Pipeline(transformers = Seq(stringIndexer, oneHotEncoder, featureAssembler, linearRegression))
+val pipeline = Pipeline(
+  shape = NodeShape(),
+  model = PipelineModel(Seq(stringIndexer, oneHotEncoder, featureAssembler, linearRegression)))
 ```
 
 ## Serialize to Zip File
@@ -58,14 +62,6 @@ for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-protobuf.z
 }
 ```
 
-### Mixed Format
-
-```scala
-for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-mixed.zip"))) {
-  pipeline.writeBundle.format(SerializationFormat.Mixed).save(bundle)
-}
-```
-
 ## Serialize to Directory
 
 In order to serialize to a directory, make sure the URI begins with
@@ -89,14 +85,6 @@ for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-protobuf-dir")
 }
 ```
 
-### Mixed Format
-
-```scala
-for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-mixed-dir"))) {
-  pipeline.writeBundle.format(SerializationFormat.Mixed).save(bundle)
-}
-```
-
 ## Deserializing
 
 Deserializing is just as easy as serializing. You don't need to know the
@@ -108,7 +96,7 @@ know where the bundle is.
 ```scala
 // Deserialize a zip bundle
 // Use Scala ARM to make sure resources are managed properly
-val zipBundle = (for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-mixed.zip"))) yield {
+val zipBundle = (for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-json.zip"))) yield {
   bundle.loadMleapBundle().get
 }).opt.get
 ```
@@ -118,7 +106,7 @@ val zipBundle = (for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/
 ```scala
 // Deserialize a directory bundle
 // Use Scala ARM to make sure resources are managed properly
-val dirBundle = (for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-mixed-dir"))) yield {
+val dirBundle = (for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-json-dir"))) yield {
   bundle.loadMleapBundle().get
 }).opt.get
 ```

@@ -14,35 +14,47 @@ pipeline has no real-world purpose, but illustrates how easy it is to
 create MLeap Bundles from Spark ML pipelines.
 
 ```scala
-import org.apache.spark.ml.feature.{StringIndexerModel, Binarizer}
 import ml.combust.bundle.BundleFile
 import ml.combust.mleap.spark.SparkSupport._
+import org.apache.spark.ml.Pipeline
+import org.apache.spark.ml.bundle.SparkBundleContext
+import org.apache.spark.ml.feature.{Binarizer, StringIndexer}
+import org.apache.spark.sql._
+import org.apache.spark.sql.functions._
 import resource._
 
-// User out-of-the-box Spark transformers like you normally would
-val stringIndexer = new StringIndexerModel(uid = "si", labels = Array("hello", "MLeap")).
-  setInputCol("test_string").
-  setOutputCol("test_index")
+  val datasetName = "./mleap-docs/assets/spark-demo.csv"
 
-val binarizer = new Binarizer(uid = "bin").
-  setThreshold(0.5).
-  setInputCol("test_double").
-  setOutputCol("test_bin")
+  val dataframe: DataFrame = spark.sqlContext.read.format("csv")
+    .option("header", true)
+    .load(datasetName)
+    .withColumn("test_double", col("test_double").cast("double"))
 
-// Use the MLeap utility method to directly create an org.apache.spark.ml.PipelineModel
+  // User out-of-the-box Spark transformers like you normally would
+  val stringIndexer = new StringIndexer().
+    setInputCol("test_string").
+    setOutputCol("test_index")
 
-import org.apache.spark.ml.mleap.SparkUtil
+  val binarizer = new Binarizer().
+    setThreshold(0.5).
+    setInputCol("test_double").
+    setOutputCol("test_bin")
 
-// Without needing to fit an org.apache.spark.ml.Pipeline
-val pipeline = SparkUtil.createPipelineModel(uid = "pipeline", Array(stringIndexer, binarizer))
+  val pipelineEstimator = new Pipeline()
+    .setStages(Array(stringIndexer, binarizer))
 
-for(modelFile <- managed(BundleFile("jar:file:/tmp/simple-spark-pipeline.zip"))) {
-  pipeline.writeBundle.
-    // save our pipeline to a zip file
-    // we can save a file to any supported java.nio.FileSystem
-    save(modelFile)
-}
+  val pipeline = pipelineEstimator.fit(dataframe)
+
+  // then serialize pipeline
+  val sbc = SparkBundleContext().withDataset(pipeline.transform(dataframe))
+  for(bf <- managed(BundleFile("jar:file:/tmp/simple-spark-pipeline.zip"))) {
+    pipeline.writeBundle.save(bf)(sbc).get
+  }
 ```
+
+Dataset used for training can be found [here](../assets/spark-demo.csv).
+
+NOTE: right click and "Save As...", Gitbook prevents directly clicking on the link.
 
 ## Import and MLeap Bundle
 
@@ -54,19 +66,18 @@ transform a leap frame.
 import ml.combust.bundle.BundleFile
 import ml.combust.mleap.runtime.MleapSupport._
 import resource._
-
 // load the Spark pipeline we saved in the previous section
 val bundle = (for(bundleFile <- managed(BundleFile("jar:file:/tmp/simple-spark-pipeline.zip"))) yield {
-  bundleFile.loadBundle().get
+  bundleFile.loadMleapBundle().get
 }).opt.get
 
 // create a simple LeapFrame to transform
 import ml.combust.mleap.runtime.{Row, LeapFrame, LocalDataset}
-import ml.combust.mleap.runtime.types._
+import ml.combust.mleap.core.types._
 
 // MLeap makes extensive use of monadic types like Try
-val schema = StructType(StructField("test_string", StringType),
-  StructField("test_double", DoubleType)).get
+val schema = StructType(StructField("test_string", ScalarType.String),
+  StructField("test_double", ScalarType.Double)).get
 val data = LocalDataset(Row("hello", 0.6),
   Row("MLeap", 0.2))
 val frame = LeapFrame(schema, data)

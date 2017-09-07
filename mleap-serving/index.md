@@ -11,7 +11,7 @@ MLeap serving is a Docker image hosted on [Docker Hub](https://hub.docker.com/r/
 To get started, pull the image to your local machine:
 
 ```
-docker pull combustml/mleap-serving:0.8.0-SNAPSHOT
+docker pull combustml/mleap-serving:0.8.0
 ```
 
 ## Usage
@@ -31,7 +31,7 @@ models in `/tmp/models` and mounting it in the container at `/models`.
 
 ```
 mkdir /tmp/models
-docker run -v /tmp/models:/models combustml/mleap-serving:0.8.0-SNAPSHOT
+docker run -v /tmp/models:/models combustml/mleap-serving:0.8.0
 ```
 
 This will expose the model server locally on port `65327`.
