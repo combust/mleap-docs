@@ -58,7 +58,7 @@ your core model against a leap frame. All MLeap transformers inherit
 from a base class: `ml.combust.mleap.runtime.transformer.Transformer`.
 For our example `StringMap` transformer, we can use a utility base class
 for simple input/output transformers called:
-`ml.combust.mleap.runtime.transformer.FeatureTransformer`. This base
+`ml.combust.mleap.runtime.transformer.SimpleTransformer`. This base
 class takes care of a small amount of boilerplate for any transformer
 that has exactly one input and one output column.
 
@@ -67,8 +67,9 @@ Here is the Scala code for the MLeap transformer.
 [StringMap.scala](https://github.com/combust/mleap/blob/master/mleap-runtime/src/main/scala/ml/combust/mleap/runtime/transformer/feature/StringMap.scala)
 ```scala
 import ml.combust.mleap.core.feature.StringMapModel
+import ml.combust.mleap.core.types.NodeShape
 import ml.combust.mleap.runtime.function.UserDefinedFunction
-import ml.combust.mleap.runtime.transformer.{FeatureTransformer, Transformer}
+import ml.combust.mleap.runtime.transformer.{SimpleTransformer, Transformer}
 
 case class StringMap(override val uid: String = Transformer.uniqueName("string_map"),
                      override val shape: NodeShape,
@@ -306,14 +307,8 @@ In order to add the custom transformer to the default MLeap registry, we will ad
 // OpNode implementations for your transformers
 my.domain.mleap.ops = ["my.domain.mleap.ops.StringMapOp"]
 
-// override the default MLeap registry to
-// include the builtin ops as well as
-// the custom transformers we have defined
-ml.combust.mleap.registry.default = {
-  ops = ["ml.combust.mleap.builtin-ops",
-    "my.domain.mleap.ops"]
-  custom-types = []
-}
+// include the custom transformers we have defined to the default MLeap registry
+ml.combust.mleap.registry.default.ops += "my.domain.mleap.ops"
 ```
 
 ### Spark Registry
@@ -327,15 +322,9 @@ In order to add the custom transformer to the default Spark registry, we will ad
 // OpNode implementations for your transformers
 my.domain.mleap.spark.ops = ["my.domain.spark.ops.StringMapOp"]
 
-// override the default Spark registry to
-// include the Spark base ops (compatible with 2.0 and 2.1)
-// as well as the Spark 2.0 ops
-// and finally our custom transformer ops
-ml.combust.mleap.spark.registry.default = {
-  ops = ["ml.combust.mleap.spark.registry.base-ops",
-    "ml.combust.mleap.spark.registry.v22-ops",
-    "my.domain.mleap.spark.ops"]
-  custom-types = []
-}
+// include the custom transformers ops we have defined to the default Spark registries
+ml.combust.mleap.spark.registry.v20.ops += my.domain.mleap.spark.ops
+ml.combust.mleap.spark.registry.v21.ops += my.domain.mleap.spark.ops
+ml.combust.mleap.spark.registry.v22.ops += my.domain.mleap.spark.ops
 ```
 
