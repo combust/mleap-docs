@@ -28,6 +28,14 @@ libraryDependencies += "ml.combust.mleap" %% "mleap-runtime" % "0.8.0"
 </dependency>
 ```
 
+If you are packaging libraries into a single JAR, you need to use the Maven Shade plugin with the following transformer to ensure `reference.conf` files are merged instead of being overwritten:
+
+```pom
+<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+    <resource>reference.conf</resource>
+</transformer>
+```
+
 1. See [build instructions](./building.html) to build MLeap from source.
 2. See [core concepts](../core-concepts/) for an overview of ML pipelines.
 3. See [basic usage](../basic/) of MLeap to start transforming leap frames.
