@@ -100,5 +100,5 @@ That's it! This is a very simple example. Most likely you will not be
 manually constructing Spark ML pipelines as we have done here, but
 rather you will be using estimators and pipelines together to train on
 your data and produce useful models. For a more advanced example, see
-our [MNIST Demo](minst.md).
+our [MNIST Demo](../demos/minst.md).
 
