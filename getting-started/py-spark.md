@@ -35,9 +35,9 @@ libraries are imported.
 
 Note: If you are working from a notebook environment, be sure to take a look at
 instructions of how to set up MLeap PySpark with:
-* [Jupyter](../integration/jupyter-notebooks.md)
-* [Zeppelin](../integration/zeppelin-notebooks.md)
-* [Databricks](../integration/databricks-notebooks.md)
+* [Jupyter](../notebooks/jupyter.md)
+* [Zeppelin](../notebooks/zeppelin.md)
+* [Databricks](../notebooks/databricks.md)
 
 ## Using PIP
 

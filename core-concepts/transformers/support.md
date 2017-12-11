@@ -25,7 +25,7 @@ NOTE: Tensorflow has no listed support here, but it is possible to
 | MinMaxScaler | x | x | x |  |
 | Ngram | x | x | | |
 | Normalizer | x | x | | |
-| OneHotEncoder | x | x | |
+| OneHotEncoder | x | x | x |
 | PCA | x | x | x | |
 | QuantileDiscretizer | x | x | | |
 | PolynomialExpansion | x | x | x | |
