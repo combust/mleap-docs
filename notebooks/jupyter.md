@@ -52,7 +52,7 @@ An alternative way is to use AddDeps Magics, but we've run into dependency colli
 First go through the steps above for launching a notebook with MLeap for Spark, then add the following to `PYTHONPATH`
 
 ```bash
-    "PYTHONPATH": "/usr/local/spark-2.0.0-bin-hadoop2.7/python:/usr/local/spark-2.0.0-bin-hadoop2.7/python/lib/py4j-0.10.1-src.zip:/Users/mikhail/combust/combust-mleap/python",
+    "PYTHONPATH": "/usr/local/spark-2.0.0-bin-hadoop2.7/python:/usr/local/spark-2.0.0-bin-hadoop2.7/python/lib/py4j-0.10.1-src.zip:/<git directory>/combust/combust-mleap/python",
 ```
 
 ### Launch Notebook with MLeap for Scikit-Learn
