@@ -116,7 +116,7 @@ import org.apache.spark.ml.mleap.SparkUtil
 
 val pipeline = SparkUtil.createPipelineModel(uid = "pipeline", Array(featureModel, rfModel))
 
-val sbc = SparkBundleContext()
+val sbc = SparkBundleContext().withDataset(rfModel.transform(datasetWithFeatures))
 for(bf <- managed(BundleFile("jar:file:/tmp/mnist-spark-pipeline.zip"))) {
         pipeline.writeBundle.save(bf)(sbc).get
 }
@@ -127,11 +127,15 @@ for(bf <- managed(BundleFile("jar:file:/tmp/mnist-spark-pipeline.zip"))) {
 The goal of this step is to show how to deserialize a `bundle` and use it to score LeapFrames without any Spark dependencies. You can download the [mnist.json](https://s3-us-west-2.amazonaws.com/mleap-demo/mnist/mnist.json) from our s3 bucket.
 
 ```scala
-import ml.combust.bundle.BundleFile
-import ml.combust.mleap.MleapSupport._
+import ml.combust.mleap.runtime.MleapSupport._
+import ml.combust.mleap.runtime.MleapContext.defaultContext
+import java.io.File
 
 // load the Spark pipeline we saved in the previous section
-val bundle = BundleFile("/tmp/mnist-spark-pipeline.zip").load().get
+val mleapPipeline = (for(bf <- managed(BundleFile("jar:file:/tmp/mnist-spark-pipeline.zip"))) yield {
+      bf.loadMleapBundle().get.root
+    }).tried.get
+
 ```
 
 Load the sample LeapFrame from the mleap-demo git repo (data/mnist.json)
@@ -144,7 +148,6 @@ val bytes = s.getBytes("UTF-8")
 val frame = FrameReader("ml.combust.mleap.json").fromBytes(bytes)
 
 // transform the dataframe using our pipeline
-val mleapPipeline = bundle.root
 val frame2 = mleapPipeline.transform(frame).get
 val data = frame2.dataset
 ```
