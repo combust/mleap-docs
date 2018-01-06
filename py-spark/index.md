@@ -43,7 +43,11 @@ feature_pipeline = [string_indexer, feature_assembler]
 
 featurePipeline = Pipeline(stages=feature_pipeline)
 
-featurePipeline.fit(df2)
+fittedPipeline = featurePipeline.fit(df2)
+
+fittedPipeline.serializeToBundle("jar:file:/tmp/pyspark.example.zip", fittedPipeline.transform(df2))
+
+deserializedPipeline = PipelineModel.deserializeFromBundle("jar:file:/tmp/pyspark.example.zip")
 
 ```
 
