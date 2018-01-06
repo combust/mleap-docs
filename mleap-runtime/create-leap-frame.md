@@ -5,6 +5,7 @@ Let's create a leap frame to hold our data.
 ```scala
 import ml.combust.mleap.runtime._
 import ml.combust.mleap.core.types._
+import ml.combust.mleap.runtime.frame.{DefaultLeapFrame, Row}
 
 // Create a schema. Returned as a Try monad to ensure that there
 // Are no duplicate field names
@@ -16,11 +17,11 @@ val schema: StructType = StructType(StructField("a_string", ScalarType.String),
 
 // Create a dataset to contain all of our values
 // This dataset has two rows
-val dataset: LocalDataset = LocalDataset(Row("Hello, MLeap!", 56.7d, 13.0f, 42, 67l),
+val dataset = Seq(Row("Hello, MLeap!", 56.7d, 13.0f, 42, 67l),
   Row("Another row", 23.4d, 11.0f, 43, 88l))
 
 // Create a LeapFrame from the schema and dataset
-val leapFrame: DefaultLeapFrame = LeapFrame(schema, dataset)
+val leapFrame = DefaultLeapFrame(schema, dataset)
 
 // Make some assertions about the data in our leap frame
 assert(leapFrame.dataset(0).getString(0) == "Hello, MLeap!")

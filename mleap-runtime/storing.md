@@ -23,13 +23,13 @@ val schema = StructType(StructField("features", TensorType(BasicType.Double)),
   StructField("byte_tensor", TensorType(BasicType.Byte)),
   StructField("short_list", ListType(BasicType.Short)),
   StructField("nullable_string", ScalarType(BasicType.String, true))).get
-val dataset = LocalDataset(Row(Tensor.denseVector(Array(20.0, 10.0, 5.0)),
+val dataset = Seq(Row(Tensor.denseVector(Array(20.0, 10.0, 5.0)),
   "hello", Seq("hello", "there"),
   Option(56.7d), 32.4f,
   Tensor.denseVector(Array[Byte](1, 2, 3, 4)),
   Seq[Short](99, 12, 45),
   None))
-val frame = LeapFrame(schema, dataset)
+val frame = DefaultLeapFrame(schema, dataset)
 ```
 
 ## JSON
