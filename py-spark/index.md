@@ -44,11 +44,6 @@ feature_pipeline = [string_indexer, feature_assembler]
 featurePipeline = Pipeline(stages=feature_pipeline)
 
 fittedPipeline = featurePipeline.fit(df2)
-
-fittedPipeline.serializeToBundle("jar:file:/tmp/pyspark.example.zip", fittedPipeline.transform(df2))
-
-deserializedPipeline = PipelineModel.deserializeFromBundle("jar:file:/tmp/pyspark.example.zip")
-
 ```
 
 
@@ -63,7 +58,7 @@ For example
 ### JSON Format
 
 ```python
-featurePipeline.serializeToBundle("jar:file:/tmp/pyspark.example.zip")
+fittedPipeline.serializeToBundle("jar:file:/tmp/pyspark.example.zip", fittedPipeline.transform(df2))
 ```
 
 ### Protobuf Format
@@ -79,5 +74,5 @@ know where the bundle is.
 ### From Zip Bundle
 
 ```python
-featurePipeline = PipelineModel.deserializeFromBundle("jar:file:/tmp/pyspark.example.zip")
+deserializedPipeline = PipelineModel.deserializeFromBundle("jar:file:/tmp/pyspark.example.zip")
 ```
