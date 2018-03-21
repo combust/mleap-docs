@@ -185,7 +185,7 @@ Note that you do have to fit your pipeline before serializing.
 Setting `init=True` tells the serializer that we are creating a bundle instead of just serializing the transformer.
 
 ```python
-feature_union_pipeline.serialize_to_bundle('/tmp', 'jar:file:/tmp/mleap-bundle.zip', init=True)
+feature_union_pipeline.serialize_to_bundle('/tmp', 'mleap-bundle', init=True)
 ```
 
 ### Protobuf Format

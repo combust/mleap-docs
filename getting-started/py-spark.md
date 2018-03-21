@@ -3,7 +3,7 @@
 MLeap PySpark integration provides serialization of PySpark-trained ML
 pipelines to [MLeap Bundles](../mleap-bundle/). MLeap also provides
 several extensions to Spark, including enhanced one hot encoding and one vs
-rest models. Unlike Mleap<>Spark integration, MLeap doesn't' yet provide PySpark
+rest models. Unlike Mleap<>Spark integration, MLeap doesn't yet provide PySpark
 integration with [Spark Extensions transformers.](../core-concepts/transformers/support.md#extensions)
 
 ## Adding MLeap Spark to Your Project
@@ -41,7 +41,7 @@ instructions of how to set up MLeap PySpark with:
 
 ## Using PIP
 
-PIP support for PySpark is coming soon.
+Alternatively, there is PIP support for PySpark available under: https://pypi.python.org/pypi/mleap.
 
 To use MLeap extensions to PySpark:
 

@@ -21,7 +21,7 @@ your MLeap pipelines.
 First, include the module as a project dependency:
 
 ```sbt
-libraryDependencies += "ml.combust.mleap" %% "mleap-tensorflow" % "0.8.0"
+libraryDependencies += "ml.combust.mleap" %% "mleap-tensorflow" % "0.9.0"
 ```
 
 Then we can start using Tensorflow graphs, let's build a simple one that
@@ -29,7 +29,7 @@ multiplies two tensors:
 
 ```scala
 import ml.combust.bundle.dsl.Shape
-import ml.combust.mleap.runtime.{LeapFrame, LocalDataset, Row}
+import ml.combust.mleap.runtime.frame.{DefaultLeapFrame, Row}
 import ml.combust.mleap.runtime.types.{FloatType, StructField, StructType}
 import org.tensorflow
 
@@ -80,10 +80,10 @@ val transformer = TensorflowTransformer(inputs = shape.inputs,
 
 // Create a sample leap frame to transform with the Tensorflow graph
 val schema = StructType(StructField("input_a", FloatType()), StructField("input_b", FloatType())).get
-val dataset = LocalDataset(Seq(Row(5.6f, 7.9f),
+val dataset = Seq(Row(5.6f, 7.9f),
   Row(3.4f, 6.7f),
-  Row(1.2f, 9.7f)))
-val frame = LeapFrame(schema, dataset)
+  Row(1.2f, 9.7f))
+val frame = DefaultLeapFrame(schema, dataset)
 
 // Transform the leap frame and make sure it behaves as expected
 val data = transformer.transform(frame).get.dataset

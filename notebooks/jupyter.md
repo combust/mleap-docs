@@ -40,19 +40,19 @@ Kernel config files are typically located in `/usr/local/share/jupyter/kernels/a
 Go ahead and add or modify `__TOREE_SPARK_OPTS__` like so:
 
 ```bash
-"__TOREE_SPARK_OPTS__": "--packages com.databricks:spark-avro_2.11:3.0.1,ml.combust.mleap:mleap-spark_2.11:0.8.0,"
+"__TOREE_SPARK_OPTS__": "--packages com.databricks:spark-avro_2.11:3.0.1,ml.combust.mleap:mleap-spark_2.11:0.9.0,"
 ```
 
 An alternative way is to use AddDeps Magics, but we've run into dependency collisions, so do so at your own risk:
 
-`%AddDeps ml.combust.mleap mleap-spark_2.11 0.8.0 --transitive`
+`%AddDeps ml.combust.mleap mleap-spark_2.11 0.9.0 --transitive`
 
 ### Launch Notebook with MLeap for PySpark
 
 First go through the steps above for launching a notebook with MLeap for Spark, then add the following to `PYTHONPATH`
 
 ```bash
-    "PYTHONPATH": "/usr/local/spark-2.0.0-bin-hadoop2.7/python:/usr/local/spark-2.0.0-bin-hadoop2.7/python/lib/py4j-0.10.1-src.zip:/Users/mikhail/combust/combust-mleap/python",
+    "PYTHONPATH": "/usr/local/spark-2.0.0-bin-hadoop2.7/python:/usr/local/spark-2.0.0-bin-hadoop2.7/python/lib/py4j-0.10.1-src.zip:/<git directory>/combust/combust-mleap/python",
 ```
 
 ### Launch Notebook with MLeap for Scikit-Learn
