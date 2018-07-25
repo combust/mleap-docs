@@ -24,12 +24,12 @@ implicit val sbc = SparkBundleContext().withDataset(transformedDataset)
 }).tried.get
 ```
 
-##Unresolved dependencies path: ml.dmlc:xgboost4j-spark:0.7 (/Users/*/mleap/mleap-xgboost-spark/build.sbt#L6-7)
+## Unresolved dependencies path: ml.dmlc:xgboost4j-spark:0.7 (/Users/*/mleap/mleap-xgboost-spark/build.sbt#L6-7)
 
 This error is seen while importing the mleap into intelliJ
 
 ### Fix
-Replace following in Dependencies.scala
+Replace following in `Dependencies.scala`
 ```scala
 val xgboostSpark = l ++= Seq(Provided.xgboostSparkDep) ++ Provided.spark
 ```
