@@ -21,7 +21,7 @@ your MLeap pipelines.
 First, include the module as a project dependency:
 
 ```sbt
-libraryDependencies += "ml.combust.mleap" %% "mleap-tensorflow" % "0.9.0"
+libraryDependencies += "ml.combust.mleap" %% "mleap-tensorflow" % "0.13.0"
 ```
 
 Then we can start using Tensorflow graphs, let's build a simple one that
