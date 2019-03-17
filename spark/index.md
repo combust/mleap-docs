@@ -22,6 +22,7 @@ import ml.combust.bundle.BundleFile
 import ml.combust.bundle.serializer.SerializationFormat
 import org.apache.spark.ml.feature.{StringIndexerModel, VectorAssembler}
 import org.apache.spark.ml.mleap.SparkUtil
+import org.apache.spark.ml.bundle.SparkBundleContext
 import ml.combust.mleap.spark.SparkSupport._
 import resource._
 
@@ -49,16 +50,20 @@ For example
 ### JSON Format
 
 ```scala
+implicit val context = SparkBundleContext().withDataset(sparkTransformed)
+
 for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-json.zip"))) {
-  pipeline.writeBundle.format(SerializationFormat.Json).save(bundle)
+  pipeline.writeBundle.format(SerializationFormat.Json).save(bundle)(context)
 }
 ```
 
 ### Protobuf Format
 
 ```scala
+implicit val context = SparkBundleContext().withDataset(sparkTransformed)
+
 for(bundle <- managed(BundleFile("jar:file:/tmp/mleap-examples/simple-protobuf.zip"))) {
-  pipeline.writeBundle.format(SerializationFormat.Protobuf).save(bundle)
+  pipeline.writeBundle.format(SerializationFormat.Protobuf).save(bundle)(context)
 }
 ```
 
@@ -72,16 +77,20 @@ For example `file:/tmp/mleap-bundle-dir`
 ### JSON Format
 
 ```scala
+implicit val context = SparkBundleContext().withDataset(sparkTransformed)
+
 for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-json-dir"))) {
-  pipeline.writeBundle.format(SerializationFormat.Json).save(bundle)
+  pipeline.writeBundle.format(SerializationFormat.Json).save(bundle)(context)
 }
 ```
 
 ### Protobuf Format
 
 ```scala
+implicit val context = SparkBundleContext().withDataset(sparkTransformed)
+
 for(bundle <- managed(BundleFile("file:/tmp/mleap-examples/simple-protobuf-dir"))) {
-  pipeline.writeBundle.format(SerializationFormat.Protobuf).save(bundle)
+  pipeline.writeBundle.format(SerializationFormat.Protobuf).save(bundle)(context)
 }
 ```
 
