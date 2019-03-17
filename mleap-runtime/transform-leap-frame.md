@@ -9,7 +9,7 @@ transformer.
 // Create a StringIndexer that knows how to index the two strings
 // In our leap frame
 val stringIndexer = StringIndexer(
-  shape = NodeShape.scalar(inputCol = "a_string", outputCol = "a_string_index"),
+  shape = NodeShape().withStandardInput("a_string").withStandardOutput("a_string_index"),
   model = StringIndexerModel(Seq("Hello, MLeap!", "Another row")))
 
 // Transform our leap frame using the StringIndexer transformer
