@@ -1,84 +1,105 @@
-# MLeap Serving
+# MLeap Serving (Spring Boot)
 
-MLeap serving provides a lightweight docker image for setting up RESTful
-API services with MLeap models. It is meant to be very simple and used
-as a tool to get prototypes up and running quickly.
+This Spring Boot project provides a lightweight docker image for setting up RESTful API services with MLeap models. 
 
 ## Installation
 
-MLeap serving is a Docker image hosted on [Docker Hub](https://hub.docker.com/r/combustml/mleap-serving/).
+MLeap Spring Boot is a Docker image hosted on [Docker Hub](https://hub.docker.com/r/combustml/mleap-spring-boot/).
 
-To get started, pull the image to your local machine:
+To get started, pull the image to your local machine, replacing the version with the desired one.
 
 ```
-docker pull combustml/mleap-serving:0.9.0
+docker pull combustml/mleap-spring-boot:{VERSION}
 ```
 
-## Usage
+## Start Server
 
-In order to start using your models as a REST API, we will need to:
-
-1. Start the server in Docker
-2. Load our model into memory
-3. Transform a leap frame
-
-### Start Server
-
-First let's start the Docker image so we can start transforming data.
-Make sure to mount a directory containing your models on the host
-machine into the container. In this example, we will be storing our
-models in `/tmp/models` and mounting it in the container at `/models`.
+First let's start the Docker image. Make sure to mount a directory containing your models on the host
+machine into the container. In this example, we will be storing our models in `/tmp/models` and mounting it in the container at `/models`.
 
 ```
 mkdir /tmp/models
-docker run -p 65327:65327 -v /tmp/models:/models combustml/mleap-serving:0.9.0
+docker run -p 8080:8080 -v /tmp/models:/models combustml/mleap-spring-boot:{VERSION}
 ```
 
-This will expose the model server locally on port `65327`.
+This will expose the model server locally on port `8080`.
 
-### Load Model
+## Available Endpoints
 
-Use curl to load the model into memory. If you don't have your own
-model, download one of our example models. Make sure to place it in the
-models directory you mounted when starting the server.
+1. POST /models : Loading a model, replacing the name of your bundle zip ```{BUNDLE_ZIP}``` and the chosen model name ```{YOUR_MODEL_NAME}```
 
+```
+body='{"modelName":"{YOUR_MODEL_NAME}","uri":"file:/models/{BUNDLE_ZIP}","config":{"memoryTimeout":900000,"diskTimeout":900000},"force":false}'
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data "$body" http://localhost:8080/models
+```
+
+2. DELETE /models/{YOUR_MODEL_NAME} : Unloading a model, replacing the chosen model name ```{YOUR_MODEL_NAME}```
+
+```
+  curl --header "Content-Type: application/json" \
+    --request DELETE \
+    http://localhost:8080/models/{YOUR_MODEL_NAME}
+```
+
+3. GET /models/{YOUR_MODEL_NAME} : Retrieving a loaded model, replacing the chosen model name ```{YOUR_MODEL_NAME}```
+
+```
+curl --header "Content-Type: application/json" \
+    --request GET \
+    http://localhost:8080/models/{YOUR_MODEL_NAME}
+```
+
+4. GET /models/{YOUR_MODEL_NAME}/meta : Retrieving a loaded model meta information, replacing the chosen model name ```{YOUR_MODEL_NAME}```
+
+```
+  curl --header "Content-Type: application/json" \
+    --request GET \
+    http://localhost:8080/models/{YOUR_MODEL_NAME}/meta
+
+```
+
+5. POST /models/{YOUR_MODEL_NAME}/transform: Transform or scoring request, replacing the chosen model name ```{YOUR_MODEL_NAME}```, format ```{YOUR_FORMAT}``` and the appropriately encoded leap frame ```{ENCODED_LEAP_FRAME}```
+
+```
+body='{"modelName":"{YOUR_MODEL_NAME}","format":"{YOUR_FORMAT}","initTimeout":"35000","tag":0,"frame":"{ENCODED_LEAP_FRAME}"}'
+
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data "$body" http://localhost:8080/models/transform
+```
+
+Format can be either `ml.combust.mleap.binary` or `ml.combust.mleap.json` and your leap frame needs to be encoded with that format.
+
+Note: The above endpoints are available either using: 
+- JSON (`Content-Type` header set to `application/json`)
+- Protobuf (`Content-Type` header set to `application/x-protobuf`).
+
+The previous scoring endpoints require you to encode the leap frame, either as JSON or protobuf. If you'd like to try out scoring without having to
+encode the leap frame, you can use the following endpoint, replacing the chosen model name and your leap frame:
+
+```
+body='{YOUR_LEAP_FRAME_JSON}'
+
+curl --header "Content-Type: application/json" \
+  --header "timeout: 1000" \
+  --request POST \
+  --data "$body" http://localhost:8080/models/{YOUR_MODEL_NAME}/transform
+```
+
+Note: The above endpoint is available either using: 
+- JSON (`Content-Type` header set to `application/json`) with a JSON leap frame.
+- Protobuf (`Content-Type` header set to `application/x-protobuf`) with a protobuf leap frame.
+
+Check out the available Swagger API documentation [mleap_serving_1.0.0_swagger.yaml](https://github.com/combust/mleap/blob/master/mleap-spring-boot/src/main/resources/mleap_serving_1.0.0_swagger.yaml) for more information or trying out the API.
+
+Example models:
 1. [AirBnB Linear Regression](https://github.com/combust/mleap/raw/master/mleap-benchmark/src/main/resources/models/airbnb.model.lr.zip)
 2. [AirBnB Random Forest](https://github.com/combust/mleap/raw/master/mleap-benchmark/src/main/resources/models/airbnb.model.rf.zip)
 
-```
-curl -XPUT -H "content-type: application/json" \
-  -d '{"path":"/models/<my model>.zip"}' \
-  http://localhost:65327/model
-```
-
-### Transform
-
-Next we will use our model to transform a JSON-encoded leap frame. If
-you are using our AirBnB example models, you can download the leap frame
-here:
-
+Example leap frames:
 1. [AirBnB Leap Frame](https://s3-us-west-2.amazonaws.com/mleap-demo/frame.airbnb.json)
 
-Save the frame to `/tmp/frame.airbnb.json` and then let's transform it
-using our server.
-
-```
-curl -XPOST -H "accept: application/json" \
-  -H "content-type: application/json" \
-  -d @/tmp/frame.airbnb.json \
-  http://localhost:65327/transform
-```
-
-You should get back a result leap frame, as JSON, that you can then
-extract the result from. If you used one of our example AirBnB models,
-the last field in the leap frame will be the prediction.
-
-### Unload Model
-
-If for some reason you don't want any model to be loaded into memory,
-but keep the server running, just DELETE the `model` resource:
-
-```
-curl -XDELETE http://localhost:65327/model
-```
-
+See the README.md in [mleap-executor](https://github.com/combust/mleap/tree/master/mleap-executor) project about using gRPC instead of HTTP.

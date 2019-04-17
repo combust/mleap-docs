@@ -15,7 +15,7 @@ Scala compatibility with Spark.
 ### Using SBT
 
 ```sbt
-libraryDependencies += "ml.combust.mleap" %% "mleap-runtime" % "0.9.0"
+libraryDependencies += "ml.combust.mleap" %% "mleap-runtime" % "0.14.0"
 ```
 
 ### Using Maven
@@ -24,7 +24,7 @@ libraryDependencies += "ml.combust.mleap" %% "mleap-runtime" % "0.9.0"
 <dependency>
   <groupId>ml.combust.mleap</groupId>
   <artifactId>mleap-runtime_2.11</artifactId>
-  <version>0.9.0</version>
+  <version>0.14.0</version>
 </dependency>
 ```
 
