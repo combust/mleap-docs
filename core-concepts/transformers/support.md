@@ -52,6 +52,7 @@ NOTE: Tensorflow has no listed support here, but it is possible to
 | RandomForestClassifier | x | x | x | |
 | SupportVectorMachines | x | x | x | |
 | MultiLayerPerceptron | x | x | | | |
+| LinearSVC | x | x | | | | 
 
 ## Regression
 
