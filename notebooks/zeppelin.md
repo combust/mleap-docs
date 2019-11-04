@@ -3,8 +3,8 @@
 Zeppelin runs Spark by default, and we won't be covering how to set-up a zeppelin notebook here. However, once you do have it set-up, adding MLeap as a dependency is very easy.
 
 MLeap is already located on Maven Central, so all you have to do is add:
-* `ml.combust.mleap:mleap-spark_2.11:0.14.0` for Spark serialization support
-* `ml.combust.mleap:mleap-runtime_2.11:0.14.0` and `ml.combust.mleap:mleap-core_2.11:0.14.0` for MLeap Runtime support
+* `ml.combust.mleap:mleap-spark_2.11:0.15.0` for Spark serialization support
+* `ml.combust.mleap:mleap-runtime_2.11:0.15.0` and `ml.combust.mleap:mleap-core_2.11:0.15.0` for MLeap Runtime support
 
 Once that's done, just include mleap import statements:
 
