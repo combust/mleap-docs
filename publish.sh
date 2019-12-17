@@ -1,5 +1,5 @@
 # install the plugins and build the static site
-gitbook install && gitbook build
+./node_modules/gitbook-cli/bin/gitbook.js install && ./node_modules/gitbook-cli/bin/gitbook.js build
 
 # checkout to the gh-pages branch
 git branch gh-pages
