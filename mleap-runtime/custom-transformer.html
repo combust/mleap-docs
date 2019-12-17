@@ -1,0 +1,1377 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Custom Transformer · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="custom-transformer.html" />
+    
+    
+    <link rel="prev" href="row-transformer.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MLeap Documentation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../getting-started/">
+            
+                <a href="../getting-started/">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="../getting-started/mleap.html">
+            
+                <a href="../getting-started/mleap.html">
+            
+                    
+                    Getting Started with MLeap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="../getting-started/spark.html">
+            
+                <a href="../getting-started/spark.html">
+            
+                    
+                    Getting Started with Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="../getting-started/py-spark.html">
+            
+                <a href="../getting-started/py-spark.html">
+            
+                    
+                    Getting Started with PySpark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="../getting-started/scikit-learn.html">
+            
+                <a href="../getting-started/scikit-learn.html">
+            
+                    
+                    Getting Started with Scikit-learn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" data-path="../getting-started/tensorflow.html">
+            
+                <a href="../getting-started/tensorflow.html">
+            
+                    
+                    Getting Started with Tensorflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="../getting-started/building.html">
+            
+                <a href="../getting-started/building.html">
+            
+                    
+                    Building from Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../core-concepts/">
+            
+                <a href="../core-concepts/">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../core-concepts/data-frames/">
+            
+                <a href="../core-concepts/data-frames/">
+            
+                    
+                    Data Frames
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../core-concepts/data-frames/data-types.html">
+            
+                <a href="../core-concepts/data-frames/data-types.html">
+            
+                    
+                    Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../core-concepts/transformers/">
+            
+                <a href="../core-concepts/transformers/">
+            
+                    
+                    Transformers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../core-concepts/transformers/support.html">
+            
+                <a href="../core-concepts/transformers/support.html">
+            
+                    
+                    Supported Transformers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../core-concepts/pipelines.html">
+            
+                <a href="../core-concepts/pipelines.html">
+            
+                    
+                    Pipelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../core-concepts/mleap-bundles.html">
+            
+                <a href="../core-concepts/mleap-bundles.html">
+            
+                    
+                    MLeap Bundles
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../core-concepts/mleap-bundles.html">
+            
+                <a href="../core-concepts/mleap-bundles.html#bundle-structure">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../core-concepts/mleap-bundles.html">
+            
+                <a href="../core-concepts/mleap-bundles.html#mleap-bundle-examples">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../core-concepts/mleap-runtime.html">
+            
+                <a href="../core-concepts/mleap-runtime.html">
+            
+                    
+                    MLeap Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../spark/">
+            
+                <a href="../spark/">
+            
+                    
+                    MLeap-Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../py-spark/">
+            
+                <a href="../py-spark/">
+            
+                    
+                    MLeap-PySpark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../scikit-learn/">
+            
+                <a href="../scikit-learn/">
+            
+                    
+                    Scikit-learn
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../scikit-learn/transformers.html">
+            
+                <a href="../scikit-learn/transformers.html">
+            
+                    
+                    Transformers Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tensorflow/">
+            
+                <a href="../tensorflow/">
+            
+                    
+                    Tensorflow
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tensorflow/mleap-integration.html">
+            
+                <a href="../tensorflow/mleap-integration.html">
+            
+                    
+                    MLeap Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tensorflow/bundle-serialization.html">
+            
+                <a href="../tensorflow/bundle-serialization.html">
+            
+                    
+                    Bundle Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/">
+            
+                    
+                    MLeap Serving
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/#start-server">
+            
+                    
+                    Start Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/#load-model">
+            
+                    
+                    Load Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/#transform">
+            
+                    
+                    Transform
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/#unload-model">
+            
+                    
+                    Unload Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    MLeap Runtime
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="create-leap-frame.html">
+            
+                <a href="create-leap-frame.html">
+            
+                    
+                    Creating a Leap Frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="leap-frame-operations.html">
+            
+                <a href="leap-frame-operations.html">
+            
+                    
+                    Leap Frame Operations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="leap-frame-operations.html">
+            
+                <a href="leap-frame-operations.html#insert">
+            
+                    
+                    Insert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="leap-frame-operations.html">
+            
+                <a href="leap-frame-operations.html#drop">
+            
+                    
+                    Drop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="leap-frame-operations.html">
+            
+                <a href="leap-frame-operations.html#read">
+            
+                    
+                    Read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.4" data-path="leap-frame-operations.html">
+            
+                <a href="leap-frame-operations.html#select">
+            
+                    
+                    Select
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="storing.html">
+            
+                <a href="storing.html">
+            
+                    
+                    Storing a Leap Frame
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="storing.html">
+            
+                <a href="storing.html#json">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="storing.html">
+            
+                <a href="storing.html#avro">
+            
+                    
+                    Avro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="storing.html">
+            
+                <a href="storing.html#binary">
+            
+                    
+                    Binary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="storing.html">
+            
+                <a href="storing.html#custom">
+            
+                    
+                    Custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="transform-leap-frame.html">
+            
+                <a href="transform-leap-frame.html">
+            
+                    
+                    Transforming a Leap Frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="bundle.html">
+            
+                <a href="bundle.html">
+            
+                    
+                    Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="row-transformer.html">
+            
+                <a href="row-transformer.html">
+            
+                    
+                    Boosting Transform Speed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.7" data-path="custom-transformer.html">
+            
+                <a href="custom-transformer.html">
+            
+                    
+                    Custom Transformer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.7.1" data-path="custom-transformer.html">
+            
+                <a href="custom-transformer.html#core-model">
+            
+                    
+                    Core Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.2" data-path="custom-transformer.html">
+            
+                <a href="custom-transformer.html#mleap-transformer">
+            
+                    
+                    MLeap Transformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.3" data-path="custom-transformer.html">
+            
+                <a href="custom-transformer.html#spark-transformer">
+            
+                    
+                    Spark Transformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.4" data-path="custom-transformer.html">
+            
+                <a href="custom-transformer.html#mleap-serialization">
+            
+                    
+                    MLeap Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.5" data-path="custom-transformer.html">
+            
+                <a href="custom-transformer.html#spark-serialization">
+            
+                    
+                    Spark Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.6" data-path="custom-transformer.html">
+            
+                <a href="custom-transformer.html#mleap-registry">
+            
+                    
+                    MLeap Registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.7" data-path="custom-transformer.html">
+            
+                <a href="custom-transformer.html#spark-registry">
+            
+                    
+                    Spark Registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../demos/">
+            
+                <a href="../demos/">
+            
+                    
+                    Demos
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../demos/mnist.html">
+            
+                <a href="../demos/mnist.html">
+            
+                    
+                    MNIST
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../notebooks/">
+            
+                <a href="../notebooks/">
+            
+                    
+                    Notebooks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../notebooks/zeppelin.html">
+            
+                <a href="../notebooks/zeppelin.html">
+            
+                    
+                    Zeppelin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../notebooks/jupyter.html">
+            
+                <a href="../notebooks/jupyter.html">
+            
+                    
+                    Jupyter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../notebooks/databricks.html">
+            
+                <a href="../notebooks/databricks.html">
+            
+                    
+                    Databricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    Frequently Asked Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../troubleshooting.html">
+            
+                <a href="../troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Custom Transformer</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="custom-transformers">Custom Transformers</h1>
+<p>Every transformer in MLeap can be considered a custom
+transformer. The only difference between the transformers and bundle
+integration code you write and what we write is that ours gets included
+in the release jars. We welcome transformer additions to the MLeap project,
+please make a PR.</p>
+<p>There are plenty of examples in the <a href="https://github.com/combust/mleap" target="_blank">MLeap source code</a>
+for how to write your own transformers and make them serializable
+to/from Spark and MLeap.</p>
+<p>Let&apos;s go through a simple example of writing a custom transformer that
+maps an input string to a double using a <code>Map[String, Double]</code>
+to store the data needed for transformation. We will call our custom
+transformer: <code>StringMap</code>. This is a transformer that is included in
+MLeap source code, and you can view it here: <a href="https://github.com/combust/mleap/blob/master/mleap-core/src/main/scala/ml/combust/mleap/core/feature/StringMapModel.scala" target="_blank">StringMapModel.scala</a>.</p>
+<h2 id="overview">Overview</h2>
+<p>A brief overview of the steps involved:</p>
+<ol>
+<li>Build our core model logic that can be shared between Spark and MLeap</li>
+<li>Build the MLeap transformer</li>
+<li>Build the Spark transformer</li>
+<li>Build bundle serialization for MLeap</li>
+<li>Build bundle serialization for Spark</li>
+<li>Configure the MLeap Bundle registries with the MLeap and Spark
+custom transformer</li>
+</ol>
+<h2 id="core-model">Core Model</h2>
+<p>The core model is the logic needed to transform the input data. It has no dependencies
+on Spark or MLeap. In the case of our <code>StringMapModel</code>, it is a class that
+knows how to map one string to a double. Let&apos;s see what this looks
+like in Scala.</p>
+<p><a href="https://github.com/combust/mleap/blob/master/mleap-core/src/main/scala/ml/combust/mleap/core/feature/StringMapModel.scala" target="_blank">StringMapModel.scala</a></p>
+<pre><code class="lang-scala"><span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StringMapModel</span>(<span class="hljs-params">labels: <span class="hljs-type">Map</span>[<span class="hljs-type">String</span>, <span class="hljs-type">Double</span>]</span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">Model</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">apply</span></span>(label: <span class="hljs-type">String</span>): <span class="hljs-type">Double</span> = labels(label)
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inputSchema</span></span>: <span class="hljs-type">StructType</span> = <span class="hljs-type">StructType</span>(<span class="hljs-string">&quot;input&quot;</span> -&gt; <span class="hljs-type">ScalarType</span>.<span class="hljs-type">String</span>).get
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">outputSchema</span></span>: <span class="hljs-type">StructType</span> = <span class="hljs-type">StructType</span>(<span class="hljs-string">&quot;output&quot;</span> -&gt; <span class="hljs-type">ScalarType</span>.<span class="hljs-type">Double</span>).get
+}
+</code></pre>
+<p>The case class has a set of labels that it know how to map to a double.
+This is very similar to a <code>StringIndexerModel</code> except that the values of
+the strings are arbitrary and not in sequence.</p>
+<h2 id="mleap-transformer">MLeap Transformer</h2>
+<p>The MLeap transformer is the piece of code that knows how to execute
+your core model against a leap frame. All MLeap transformers inherit
+from a base class: <code>ml.combust.mleap.runtime.transformer.Transformer</code>.
+For our example <code>StringMap</code> transformer, we can use a utility base class
+for simple input/output transformers called:
+<code>ml.combust.mleap.runtime.transformer.SimpleTransformer</code>. This base
+class takes care of a small amount of boilerplate for any transformer
+that has exactly one input and one output column.</p>
+<p>Here is the Scala code for the MLeap transformer.</p>
+<p><a href="https://github.com/combust/mleap/blob/master/mleap-runtime/src/main/scala/ml/combust/mleap/runtime/transformer/feature/StringMap.scala" target="_blank">StringMap.scala</a></p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> ml.combust.mleap.core.feature.<span class="hljs-type">StringMapModel</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.core.types.<span class="hljs-type">NodeShape</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.runtime.function.<span class="hljs-type">UserDefinedFunction</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.runtime.transformer.{<span class="hljs-type">SimpleTransformer</span>, <span class="hljs-type">Transformer</span>}
+
+<span class="hljs-keyword">case</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StringMap</span>(<span class="hljs-params">override val uid: <span class="hljs-type">String</span> = <span class="hljs-type">Transformer</span>.uniqueName(&quot;string_map&quot;</span>),</span>
+                     <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> shape: <span class="hljs-type">NodeShape</span>,
+                     <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> model: <span class="hljs-type">StringMapModel</span>) <span class="hljs-keyword">extends</span> <span class="hljs-type">SimpleTransformer</span> {
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> exec: <span class="hljs-type">UserDefinedFunction</span> = (label: <span class="hljs-type">String</span>) =&gt; model(label)
+</code></pre>
+<p>Note the <code>UserDefinedFunction</code> exec. This is an MLeap
+UserDefinedFunction that gets created from a Scala function using
+reflection. UserDefinedFunctions are the primary way that MLeap allows
+us to transform LeapFrames. The NodeShape shape defines the inputCol 
+and outputCol for this transformer.</p>
+<h2 id="spark-transformer">Spark Transformer</h2>
+<p>The Spark transformer knows how to execute the core model against a
+Spark DataFrame. All Spark transformers inherit from
+<code>org.apache.spark.ml.Transformer</code>. If you have ever written a custom
+Spark transformer before, this process will be very familiar.</p>
+<p>Here is what a custom Spark transformer looks like in Scala.</p>
+<p><a href="https://github.com/combust/mleap/tree/master/mleap-spark-extension/src/main/scala/org/apache/spark/ml/mleap/feature/StringMap.scala" target="_blank">StringMap.scala</a></p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> ml.combust.mleap.core.feature.<span class="hljs-type">StringMapModel</span>
+<span class="hljs-keyword">import</span> org.apache.spark.annotation.<span class="hljs-type">DeveloperApi</span>
+<span class="hljs-keyword">import</span> org.apache.spark.ml.<span class="hljs-type">Transformer</span>
+<span class="hljs-keyword">import</span> org.apache.spark.ml.param.<span class="hljs-type">ParamMap</span>
+<span class="hljs-keyword">import</span> org.apache.spark.ml.param.shared.{<span class="hljs-type">HasInputCol</span>, <span class="hljs-type">HasOutputCol</span>}
+<span class="hljs-keyword">import</span> org.apache.spark.ml.util.<span class="hljs-type">Identifiable</span>
+<span class="hljs-keyword">import</span> org.apache.spark.sql.functions._
+<span class="hljs-keyword">import</span> org.apache.spark.sql.{<span class="hljs-type">DataFrame</span>, <span class="hljs-type">Dataset</span>}
+<span class="hljs-keyword">import</span> org.apache.spark.sql.types._
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StringMap</span>(<span class="hljs-params">override val uid: <span class="hljs-type">String</span>,
+                val model: <span class="hljs-type">StringMapModel</span></span>) <span class="hljs-keyword">extends</span> <span class="hljs-title">Transformer</span></span>
+  <span class="hljs-keyword">with</span> <span class="hljs-type">HasInputCol</span>
+  <span class="hljs-keyword">with</span> <span class="hljs-type">HasOutputCol</span> {
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">this</span></span>(model: <span class="hljs-type">StringMapModel</span>) = <span class="hljs-keyword">this</span>(uid = <span class="hljs-type">Identifiable</span>.randomUID(<span class="hljs-string">&quot;string_map&quot;</span>), model = model)
+
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setInputCol</span></span>(value: <span class="hljs-type">String</span>): <span class="hljs-keyword">this</span>.<span class="hljs-keyword">type</span> = set(inputCol, value)
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setOutputCol</span></span>(value: <span class="hljs-type">String</span>): <span class="hljs-keyword">this</span>.<span class="hljs-keyword">type</span> = set(outputCol, value)
+
+  <span class="hljs-meta">@org</span>.apache.spark.annotation.<span class="hljs-type">Since</span>(<span class="hljs-string">&quot;2.0.0&quot;</span>)
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">transform</span></span>(dataset: <span class="hljs-type">Dataset</span>[_]): <span class="hljs-type">DataFrame</span> = {
+    <span class="hljs-keyword">val</span> stringMapUdf = udf {
+      (label: <span class="hljs-type">String</span>) =&gt; model(label)
+    }
+
+    dataset.withColumn($(outputCol), stringMapUdf(dataset($(inputCol))))
+  }
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">copy</span></span>(extra: <span class="hljs-type">ParamMap</span>): <span class="hljs-type">Transformer</span> = copyValues(<span class="hljs-keyword">new</span> <span class="hljs-type">StringMap</span>(uid, model), extra)
+
+  <span class="hljs-meta">@DeveloperApi</span>
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">transformSchema</span></span>(schema: <span class="hljs-type">StructType</span>): <span class="hljs-type">StructType</span> = {
+    require(schema($(inputCol)).dataType.isInstanceOf[<span class="hljs-type">StringType</span>],
+      <span class="hljs-string">s&quot;Input column must be of type StringType but got <span class="hljs-subst">${schema($(inputCol)).dataType}</span>&quot;</span>)
+    <span class="hljs-keyword">val</span> inputFields = schema.fields
+    require(!inputFields.exists(_.name == $(outputCol)),
+      <span class="hljs-string">s&quot;Output column <span class="hljs-subst">${$(outputCol)}</span> already exists.&quot;</span>)
+
+    <span class="hljs-type">StructType</span>(schema.fields :+ <span class="hljs-type">StructField</span>($(outputCol), <span class="hljs-type">DoubleType</span>))
+  }
+}
+</code></pre>
+<h2 id="mleap-serialization">MLeap Serialization</h2>
+<p>We need to define how to serialize/deserialize our model to/from an
+MLeap Bundle. In order to do this, we make an implementation of
+<code>ml.combust.mleap.bundle.ops.MleapOp</code> and <code>ml.combust.bundle.op.OpModel</code> for our
+MLeap transformer and core model, respectively. These type classes are
+all we need to define bundle serialization.</p>
+<p>Here is what the serialization code looks like for our MLeap transformer
+in Scala.</p>
+<p>NOTE: The code below looks long, but most of it is auto-generated by the IDE.</p>
+<p><a href="https://github.com/combust/mleap/blob/master/mleap-runtime/src/main/scala/ml/combust/mleap/bundle/ops/feature/StringMapOp.scala" target="_blank">StringMapOp.scala</a></p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> ml.combust.bundle.<span class="hljs-type">BundleContext</span>
+<span class="hljs-keyword">import</span> ml.combust.bundle.dsl._
+<span class="hljs-keyword">import</span> ml.combust.bundle.op.<span class="hljs-type">OpModel</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.bundle.ops.<span class="hljs-type">MleapOp</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.core.feature.<span class="hljs-type">StringMapModel</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.runtime.<span class="hljs-type">MleapContext</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.runtime.transformer.feature.<span class="hljs-type">StringMap</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StringMapOp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">MleapOp</span>[<span class="hljs-type">StringMap</span>, <span class="hljs-type">StringMapModel</span>] </span>{
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> <span class="hljs-type">Model</span>: <span class="hljs-type">OpModel</span>[<span class="hljs-type">MleapContext</span>, <span class="hljs-type">StringMapModel</span>] = <span class="hljs-keyword">new</span> <span class="hljs-type">OpModel</span>[<span class="hljs-type">MleapContext</span>, <span class="hljs-type">StringMapModel</span>] {
+    <span class="hljs-comment">// the class of the model is needed for when we go to serialize JVM objects</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> klazz: <span class="hljs-type">Class</span>[<span class="hljs-type">StringMapModel</span>] = classOf[<span class="hljs-type">StringMapModel</span>]
+
+    <span class="hljs-comment">// a unique name for our op: &quot;string_map&quot;</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">opName</span></span>: <span class="hljs-type">String</span> = <span class="hljs-type">Bundle</span>.<span class="hljs-type">BuiltinOps</span>.feature.string_map
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">store</span></span>(model: <span class="hljs-type">Model</span>, obj: <span class="hljs-type">StringMapModel</span>)
+                      (<span class="hljs-keyword">implicit</span> context: <span class="hljs-type">BundleContext</span>[<span class="hljs-type">MleapContext</span>]): <span class="hljs-type">Model</span> = {
+      <span class="hljs-comment">// unzip our label map so we can store the label and the value</span>
+      <span class="hljs-comment">// as two parallel arrays, we do this because MLeap Bundles do</span>
+      <span class="hljs-comment">// not support storing data as a map</span>
+      <span class="hljs-keyword">val</span> (labels, values) = obj.labels.toSeq.unzip
+
+      <span class="hljs-comment">// add the labels and values to the Bundle model that</span>
+      <span class="hljs-comment">// will be serialized to our MLeap bundle</span>
+      model.withValue(<span class="hljs-string">&quot;labels&quot;</span>, <span class="hljs-type">Value</span>.stringList(labels)).
+        withValue(<span class="hljs-string">&quot;values&quot;</span>, <span class="hljs-type">Value</span>.doubleList(values))
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load</span></span>(model: <span class="hljs-type">Model</span>)
+                     (<span class="hljs-keyword">implicit</span> context: <span class="hljs-type">BundleContext</span>[<span class="hljs-type">MleapContext</span>]): <span class="hljs-type">StringMapModel</span> = {
+      <span class="hljs-comment">// retrieve our list of labels</span>
+      <span class="hljs-keyword">val</span> labels = model.value(<span class="hljs-string">&quot;labels&quot;</span>).getStringList
+
+      <span class="hljs-comment">// retrieve our list of values</span>
+      <span class="hljs-keyword">val</span> values = model.value(<span class="hljs-string">&quot;values&quot;</span>).getDoubleList
+
+      <span class="hljs-comment">// reconstruct the model using the parallel labels and values</span>
+      <span class="hljs-type">StringMapModel</span>(labels.zip(values).toMap)
+    }
+  }
+
+  <span class="hljs-comment">// the core model that is used by the transformer</span>
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">model</span></span>(node: <span class="hljs-type">StringMap</span>): <span class="hljs-type">StringMapModel</span> = node.model
+}
+</code></pre>
+<p>We will need to register <code>StringMapOp</code> with the MLeap bundle registry at
+runtime to let MLeap know about it. We go over the registry later in
+this article.</p>
+<h2 id="spark-serialization">Spark Serialization</h2>
+<p>We also need to define how to serialize/deserialize the custom Spark
+transformer to/from MLeap. This is very similar to the process we took
+for the MLeap transformer above. We will again be implementing both
+<code>ml.combust.bundle.op.OpNode</code> and <code>ml.combust.bundle.op.OpModel</code>.</p>
+<p>Here is what the serialization code looks like for StringMap in Scala.</p>
+<p><a href="https://github.com/combust/mleap/tree/master/mleap-spark-extension/src/main/scala/org/apache/spark/ml/bundle/extension/ops/feature/StringMapOp.scala" target="_blank">StringMapOp.scala</a></p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> ml.combust.bundle.<span class="hljs-type">BundleContext</span>
+<span class="hljs-keyword">import</span> ml.combust.bundle.dsl._
+<span class="hljs-keyword">import</span> ml.combust.bundle.op.{<span class="hljs-type">OpModel</span>, <span class="hljs-type">OpNode</span>}
+<span class="hljs-keyword">import</span> ml.combust.mleap.core.feature.<span class="hljs-type">StringMapModel</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.runtime.<span class="hljs-type">MleapContext</span>
+<span class="hljs-keyword">import</span> org.apache.spark.ml.bundle.<span class="hljs-type">SparkBundleContext</span>
+<span class="hljs-keyword">import</span> org.apache.spark.ml.mleap.feature.<span class="hljs-type">StringMap</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StringMapOp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">OpNode</span>[<span class="hljs-type">SparkBundleContext</span>, <span class="hljs-type">StringMap</span>, <span class="hljs-type">StringMapModel</span>] </span>{
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> <span class="hljs-type">Model</span>: <span class="hljs-type">OpModel</span>[<span class="hljs-type">SparkBundleContext</span>, <span class="hljs-type">StringMapModel</span>] = <span class="hljs-keyword">new</span> <span class="hljs-type">OpModel</span>[<span class="hljs-type">SparkBundleContext</span>, <span class="hljs-type">StringMapModel</span>] {
+    <span class="hljs-comment">// the class of the model is needed for when we go to serialize JVM objects</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> klazz: <span class="hljs-type">Class</span>[<span class="hljs-type">StringMapModel</span>] = classOf[<span class="hljs-type">StringMapModel</span>]
+
+    <span class="hljs-comment">// a unique name for our op: &quot;string_map&quot;</span>
+    <span class="hljs-comment">// this should be the same as for the MLeap transformer serialization</span>
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">opName</span></span>: <span class="hljs-type">String</span> = <span class="hljs-type">Bundle</span>.<span class="hljs-type">BuiltinOps</span>.feature.string_map
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">store</span></span>(model: <span class="hljs-type">Model</span>, obj: <span class="hljs-type">StringMapModel</span>)
+                      (<span class="hljs-keyword">implicit</span> context: <span class="hljs-type">BundleContext</span>[<span class="hljs-type">SparkBundleContext</span>]): <span class="hljs-type">Model</span> = {
+      <span class="hljs-comment">// unzip our label map so we can store the label and the value</span>
+      <span class="hljs-comment">// as two parallel arrays, we do this because MLeap Bundles do</span>
+      <span class="hljs-comment">// not support storing data as a map</span>
+      <span class="hljs-keyword">val</span> (labels, values) = obj.labels.toSeq.unzip
+
+      <span class="hljs-comment">// add the labels and values to the Bundle model that</span>
+      <span class="hljs-comment">// will be serialized to our MLeap bundle</span>
+      model.withValue(<span class="hljs-string">&quot;labels&quot;</span>, <span class="hljs-type">Value</span>.stringList(labels)).
+        withValue(<span class="hljs-string">&quot;values&quot;</span>, <span class="hljs-type">Value</span>.doubleList(values))
+    }
+
+    <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load</span></span>(model: <span class="hljs-type">Model</span>)
+                     (<span class="hljs-keyword">implicit</span> context: <span class="hljs-type">BundleContext</span>[<span class="hljs-type">SparkBundleContext</span>]): <span class="hljs-type">StringMapModel</span> = {
+      <span class="hljs-comment">// retrieve our list of labels</span>
+      <span class="hljs-keyword">val</span> labels = model.value(<span class="hljs-string">&quot;labels&quot;</span>).getStringList
+
+      <span class="hljs-comment">// retrieve our list of values</span>
+      <span class="hljs-keyword">val</span> values = model.value(<span class="hljs-string">&quot;values&quot;</span>).getDoubleList
+
+      <span class="hljs-comment">// reconstruct the model using the parallel labels and values</span>
+      <span class="hljs-type">StringMapModel</span>(labels.zip(values).toMap)
+    }
+  }
+  <span class="hljs-keyword">override</span> <span class="hljs-keyword">val</span> klazz: <span class="hljs-type">Class</span>[<span class="hljs-type">StringMap</span>] = classOf[<span class="hljs-type">StringMap</span>]
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">name</span></span>(node: <span class="hljs-type">StringMap</span>): <span class="hljs-type">String</span> = node.uid
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">model</span></span>(node: <span class="hljs-type">StringMap</span>): <span class="hljs-type">StringMapModel</span> = node.model
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">load</span></span>(node: <span class="hljs-type">Node</span>, model: <span class="hljs-type">StringMapModel</span>)
+                   (<span class="hljs-keyword">implicit</span> context: <span class="hljs-type">BundleContext</span>[<span class="hljs-type">SparkBundleContext</span>]): <span class="hljs-type">StringMap</span> = {
+    <span class="hljs-keyword">new</span> <span class="hljs-type">StringMap</span>(uid = node.name, model = model).
+      setInputCol(node.shape.standardInput.name).
+      setOutputCol(node.shape.standardOutput.name)
+  }
+
+  <span class="hljs-keyword">override</span> <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">shape</span></span>(node: <span class="hljs-type">StringMap</span>)(<span class="hljs-keyword">implicit</span> context: <span class="hljs-type">BundleContext</span>[<span class="hljs-type">SparkBundleContext</span>]): <span class="hljs-type">NodeShape</span> =
+    <span class="hljs-type">NodeShape</span>().withStandardIO(node.getInputCol, node.getOutputCol)
+}
+</code></pre>
+<p>We will need to register this with the MLeap registry as well, so that
+MLeap knows how to serialize this Spark transformer.</p>
+<h2 id="mleap-bundle-registries">MLeap Bundle Registries</h2>
+<p>A registry contains all of the custom transformers and types for a given
+execution engine. In this case, we support the MLeap and Spark execution
+engines for the <code>StringMap</code> transformer, so we will have to configure
+both the Spark and MLeap registry to know how to serialize/deserialize
+their respective transformers.</p>
+<p>MLeap uses <a href="https://github.com/typesafehub/config" target="_blank">Typesafe Config</a> to
+configure registries. By default, MLeap ships with registries configured
+for the Spark runtime and the MLeap runtime. You can take a look at each
+of them here:</p>
+<ol>
+<li><a href="https://github.com/combust/mleap/blob/master/mleap-runtime/src/main/resources/reference.conf" target="_blank">MLeap Registry</a></li>
+<li><a href="https://github.com/combust/mleap/blob/master/mleap-spark/src/main/resources/reference.conf" target="_blank">Spark Registry</a></li>
+</ol>
+<p>By default, the MLeap runtime uses the configuration at <code>ml.combust.mleap.registry.default</code>.
+Spark uses the configuration at <code>ml.combust.mleap.spark.registry.default</code>.</p>
+<h3 id="mleap-registry">MLeap Registry</h3>
+<p>In order to add the custom transformer to the default MLeap registry, we will add a
+<code>reference.conf</code> file to our own project that looks like this:</p>
+<pre><code class="lang-conf">// make a list of all your custom transformers
+// the list contains the fully-qualified class names of the
+// OpNode implementations for your transformers
+my.domain.mleap.ops = [&quot;my.domain.mleap.ops.StringMapOp&quot;]
+
+// include the custom transformers we have defined to the default MLeap registry
+ml.combust.mleap.registry.default.ops += &quot;my.domain.mleap.ops&quot;
+</code></pre>
+<h3 id="spark-registry">Spark Registry</h3>
+<p>In order to add the custom transformer to the default Spark registry, we will add a
+<code>reference.conf</code> file to our own project that looks like this:</p>
+<pre><code class="lang-conf">// make a list of all your custom transformers
+// the list contains the fully-qualified class names of the
+// OpNode implementations for your transformers
+my.domain.mleap.spark.ops = [&quot;my.domain.spark.ops.StringMapOp&quot;]
+
+// include the custom transformers ops we have defined to the default Spark registries
+ml.combust.mleap.spark.registry.v20.ops += my.domain.mleap.spark.ops
+ml.combust.mleap.spark.registry.v21.ops += my.domain.mleap.spark.ops
+ml.combust.mleap.spark.registry.v22.ops += my.domain.mleap.spark.ops
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="row-transformer.html" class="navigation navigation-prev " aria-label="Previous page: Boosting Transform Speed">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="custom-transformer.html#core-model" class="navigation navigation-next " aria-label="Next page: Core Model">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Custom Transformer","level":"1.8.7","depth":2,"next":{"title":"Core Model","level":"1.8.7.1","depth":3,"anchor":"#core-model","path":"mleap-runtime/custom-transformer.md","ref":"mleap-runtime/custom-transformer.md#core-model","articles":[]},"previous":{"title":"Boosting Transform Speed","level":"1.8.6","depth":2,"path":"mleap-runtime/row-transformer.md","ref":"mleap-runtime/row-transformer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"mleap-runtime/custom-transformer.md","mtime":"2019-12-17T02:18:15.773Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T02:24:18.768Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

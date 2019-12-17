@@ -1,0 +1,1182 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Getting Started with Tensorflow · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="building.html" />
+    
+    
+    <link rel="prev" href="scikit-learn.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    MLeap Documentation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="mleap.html">
+            
+                <a href="mleap.html">
+            
+                    
+                    Getting Started with MLeap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="spark.html">
+            
+                <a href="spark.html">
+            
+                    
+                    Getting Started with Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="py-spark.html">
+            
+                <a href="py-spark.html">
+            
+                    
+                    Getting Started with PySpark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" data-path="scikit-learn.html">
+            
+                <a href="scikit-learn.html">
+            
+                    
+                    Getting Started with Scikit-learn
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.6" data-path="tensorflow.html">
+            
+                <a href="tensorflow.html">
+            
+                    
+                    Getting Started with Tensorflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" data-path="building.html">
+            
+                <a href="building.html">
+            
+                    
+                    Building from Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../core-concepts/">
+            
+                <a href="../core-concepts/">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../core-concepts/data-frames/">
+            
+                <a href="../core-concepts/data-frames/">
+            
+                    
+                    Data Frames
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../core-concepts/data-frames/data-types.html">
+            
+                <a href="../core-concepts/data-frames/data-types.html">
+            
+                    
+                    Data Types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../core-concepts/transformers/">
+            
+                <a href="../core-concepts/transformers/">
+            
+                    
+                    Transformers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../core-concepts/transformers/support.html">
+            
+                <a href="../core-concepts/transformers/support.html">
+            
+                    
+                    Supported Transformers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../core-concepts/pipelines.html">
+            
+                <a href="../core-concepts/pipelines.html">
+            
+                    
+                    Pipelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../core-concepts/mleap-bundles.html">
+            
+                <a href="../core-concepts/mleap-bundles.html">
+            
+                    
+                    MLeap Bundles
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../core-concepts/mleap-bundles.html">
+            
+                <a href="../core-concepts/mleap-bundles.html#bundle-structure">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4.2" data-path="../core-concepts/mleap-bundles.html">
+            
+                <a href="../core-concepts/mleap-bundles.html#mleap-bundle-examples">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../core-concepts/mleap-runtime.html">
+            
+                <a href="../core-concepts/mleap-runtime.html">
+            
+                    
+                    MLeap Runtime
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../spark/">
+            
+                <a href="../spark/">
+            
+                    
+                    MLeap-Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../py-spark/">
+            
+                <a href="../py-spark/">
+            
+                    
+                    MLeap-PySpark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../scikit-learn/">
+            
+                <a href="../scikit-learn/">
+            
+                    
+                    Scikit-learn
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../scikit-learn/transformers.html">
+            
+                <a href="../scikit-learn/transformers.html">
+            
+                    
+                    Transformers Guide
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../tensorflow/">
+            
+                <a href="../tensorflow/">
+            
+                    
+                    Tensorflow
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../tensorflow/mleap-integration.html">
+            
+                <a href="../tensorflow/mleap-integration.html">
+            
+                    
+                    MLeap Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../tensorflow/bundle-serialization.html">
+            
+                <a href="../tensorflow/bundle-serialization.html">
+            
+                    
+                    Bundle Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/">
+            
+                    
+                    MLeap Serving
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/#start-server">
+            
+                    
+                    Start Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/#load-model">
+            
+                    
+                    Load Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/#transform">
+            
+                    
+                    Transform
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../mleap-serving/">
+            
+                <a href="../mleap-serving/#unload-model">
+            
+                    
+                    Unload Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../mleap-runtime/">
+            
+                <a href="../mleap-runtime/">
+            
+                    
+                    MLeap Runtime
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../mleap-runtime/create-leap-frame.html">
+            
+                <a href="../mleap-runtime/create-leap-frame.html">
+            
+                    
+                    Creating a Leap Frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html">
+            
+                    
+                    Leap Frame Operations
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html#insert">
+            
+                    
+                    Insert
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html#drop">
+            
+                    
+                    Drop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html#read">
+            
+                    
+                    Read
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.4" data-path="../mleap-runtime/leap-frame-operations.html">
+            
+                <a href="../mleap-runtime/leap-frame-operations.html#select">
+            
+                    
+                    Select
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html">
+            
+                    
+                    Storing a Leap Frame
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.3.1" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html#json">
+            
+                    
+                    JSON
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.2" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html#avro">
+            
+                    
+                    Avro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.3" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html#binary">
+            
+                    
+                    Binary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3.4" data-path="../mleap-runtime/storing.html">
+            
+                <a href="../mleap-runtime/storing.html#custom">
+            
+                    
+                    Custom
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../mleap-runtime/transform-leap-frame.html">
+            
+                <a href="../mleap-runtime/transform-leap-frame.html">
+            
+                    
+                    Transforming a Leap Frame
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../mleap-runtime/bundle.html">
+            
+                <a href="../mleap-runtime/bundle.html">
+            
+                    
+                    Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="../mleap-runtime/row-transformer.html">
+            
+                <a href="../mleap-runtime/row-transformer.html">
+            
+                    
+                    Boosting Transform Speed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html">
+            
+                    
+                    Custom Transformer
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.7.1" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html#core-model">
+            
+                    
+                    Core Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.2" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html#mleap-transformer">
+            
+                    
+                    MLeap Transformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.3" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html#spark-transformer">
+            
+                    
+                    Spark Transformer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.4" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html#mleap-serialization">
+            
+                    
+                    MLeap Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.5" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html#spark-serialization">
+            
+                    
+                    Spark Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.6" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html#mleap-registry">
+            
+                    
+                    MLeap Registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7.7" data-path="../mleap-runtime/custom-transformer.html">
+            
+                <a href="../mleap-runtime/custom-transformer.html#spark-registry">
+            
+                    
+                    Spark Registry
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../demos/">
+            
+                <a href="../demos/">
+            
+                    
+                    Demos
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../demos/mnist.html">
+            
+                <a href="../demos/mnist.html">
+            
+                    
+                    MNIST
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../notebooks/">
+            
+                <a href="../notebooks/">
+            
+                    
+                    Notebooks
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../notebooks/zeppelin.html">
+            
+                <a href="../notebooks/zeppelin.html">
+            
+                    
+                    Zeppelin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../notebooks/jupyter.html">
+            
+                <a href="../notebooks/jupyter.html">
+            
+                    
+                    Jupyter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../notebooks/databricks.html">
+            
+                <a href="../notebooks/databricks.html">
+            
+                    
+                    Databricks
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    Frequently Asked Questions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../troubleshooting.html">
+            
+                <a href="../troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Getting Started with Tensorflow</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="getting-started-with-tensorflow">Getting Started with Tensorflow</h1>
+<p>MLeap Tensorflow integration provides support for including Tensorflow
+graphs as a transform step in your ML pipelines. In the future we may
+provide more compatibility. For right now, Tensorflow integration should
+be considered experimental as both Tensorflow and MLeap integration with
+Tensorflow are still stabilizing.</p>
+<h2 id="building-mleap-tensorflow">Building MLeap-Tensorflow</h2>
+<p>MLeap Tensorflow modules are not included in maven central, and must
+instead be built from source along with the Tensorflow JNI support. See
+<a href="building.html#build-tensorflow-mleap-module">instructions</a> for building
+the Tensorflow module.</p>
+<h2 id="using-mleap-tensorflow">Using MLeap-Tensorflow</h2>
+<p>Once you have everything built, it&apos;s easy to incorporate Tensorflow into
+your MLeap pipelines.</p>
+<p>First, include the module as a project dependency:</p>
+<pre><code class="lang-sbt">libraryDependencies += &quot;ml.combust.mleap&quot; %% &quot;mleap-tensorflow&quot; % &quot;0.15.0&quot;
+</code></pre>
+<p>Then we can start using Tensorflow graphs, let&apos;s build a simple one that
+multiplies two tensors:</p>
+<pre><code class="lang-scala"><span class="hljs-keyword">import</span> ml.combust.mleap.core.types._
+<span class="hljs-keyword">import</span> ml.combust.mleap.runtime.frame.{<span class="hljs-type">DefaultLeapFrame</span>, <span class="hljs-type">Row</span>}
+<span class="hljs-keyword">import</span> ml.combust.mleap.tensor.<span class="hljs-type">Tensor</span>
+<span class="hljs-keyword">import</span> ml.combust.mleap.tensorflow.{<span class="hljs-type">TensorflowModel</span>, <span class="hljs-type">TensorflowTransformer</span>}
+<span class="hljs-keyword">import</span> org.tensorflow
+
+<span class="hljs-comment">// Initialize our Tensorflow demo graph</span>
+<span class="hljs-keyword">val</span> graph = <span class="hljs-keyword">new</span> tensorflow.<span class="hljs-type">Graph</span>
+
+<span class="hljs-comment">// Build placeholders for our input values</span>
+<span class="hljs-keyword">val</span> inputA = graph.opBuilder(<span class="hljs-string">&quot;Placeholder&quot;</span>, <span class="hljs-string">&quot;InputA&quot;</span>).
+  setAttr(<span class="hljs-string">&quot;dtype&quot;</span>, tensorflow.<span class="hljs-type">DataType</span>.<span class="hljs-type">FLOAT</span>).
+  build()
+<span class="hljs-keyword">val</span> inputB = graph.opBuilder(<span class="hljs-string">&quot;Placeholder&quot;</span>, <span class="hljs-string">&quot;InputB&quot;</span>).
+  setAttr(<span class="hljs-string">&quot;dtype&quot;</span>, tensorflow.<span class="hljs-type">DataType</span>.<span class="hljs-type">FLOAT</span>).
+  build()
+
+<span class="hljs-comment">// Multiply the two placeholders and put the result in</span>
+<span class="hljs-comment">// The &quot;MyResult&quot; tensor</span>
+graph.opBuilder(<span class="hljs-string">&quot;Mul&quot;</span>, <span class="hljs-string">&quot;MyResult&quot;</span>).
+  setAttr(<span class="hljs-string">&quot;T&quot;</span>, tensorflow.<span class="hljs-type">DataType</span>.<span class="hljs-type">FLOAT</span>).
+  addInput(inputA.output(<span class="hljs-number">0</span>)).
+  addInput(inputB.output(<span class="hljs-number">0</span>)).
+  build()
+
+<span class="hljs-comment">// Build the MLeap model wrapper around the Tensorflow graph</span>
+<span class="hljs-keyword">val</span> model = <span class="hljs-type">TensorflowModel</span>(graph,
+  <span class="hljs-comment">// Must specify inputs and input types for converting to TF tensors</span>
+  inputs = <span class="hljs-type">Seq</span>((<span class="hljs-string">&quot;InputA&quot;</span>, <span class="hljs-type">TensorType</span>.<span class="hljs-type">Float</span>()), (<span class="hljs-string">&quot;InputB&quot;</span>, <span class="hljs-type">TensorType</span>.<span class="hljs-type">Float</span>())),
+  <span class="hljs-comment">// Likewise, specify the output values so we can convert back to MLeap</span>
+  <span class="hljs-comment">// Types properly</span>
+  outputs = <span class="hljs-type">Seq</span>((<span class="hljs-string">&quot;MyResult&quot;</span>, <span class="hljs-type">TensorType</span>.<span class="hljs-type">Float</span>())))
+
+<span class="hljs-comment">// Connect our Leap Frame values to the Tensorflow graph</span>
+<span class="hljs-comment">// Inputs and outputs</span>
+<span class="hljs-keyword">val</span> shape = <span class="hljs-type">NodeShape</span>().
+  <span class="hljs-comment">// Column &quot;input_a&quot; gets sent to the TF graph as the input &quot;InputA&quot;</span>
+  withInput(<span class="hljs-string">&quot;InputA&quot;</span>, <span class="hljs-string">&quot;input_a&quot;</span>).
+  <span class="hljs-comment">// Column &quot;input_b&quot; gets sent to the TF graph as the input &quot;InputB&quot;</span>
+  withInput(<span class="hljs-string">&quot;InputB&quot;</span>, <span class="hljs-string">&quot;input_b&quot;</span>).
+  <span class="hljs-comment">// TF graph output &quot;MyResult&quot; gets placed in the leap frame as col</span>
+  <span class="hljs-comment">// &quot;my_result&quot;</span>
+  withOutput(<span class="hljs-string">&quot;MyResult&quot;</span>, <span class="hljs-string">&quot;my_result&quot;</span>)
+
+<span class="hljs-comment">// Create the MLeap transformer that executes the TF model against</span>
+<span class="hljs-comment">// A leap frame</span>
+<span class="hljs-keyword">val</span> transformer = <span class="hljs-type">TensorflowTransformer</span>(shape = shape, model = model)
+
+<span class="hljs-comment">// Create a sample leap frame to transform with the Tensorflow graph</span>
+<span class="hljs-keyword">val</span> schema = <span class="hljs-type">StructType</span>(<span class="hljs-type">StructField</span>(<span class="hljs-string">&quot;input_a&quot;</span>, <span class="hljs-type">ScalarType</span>.<span class="hljs-type">Float</span>), <span class="hljs-type">StructField</span>(<span class="hljs-string">&quot;input_b&quot;</span>, <span class="hljs-type">ScalarType</span>.<span class="hljs-type">Float</span>)).get
+<span class="hljs-keyword">val</span> dataset = <span class="hljs-type">Seq</span>(<span class="hljs-type">Row</span>(<span class="hljs-number">5.6</span>f, <span class="hljs-number">7.9</span>f),
+  <span class="hljs-type">Row</span>(<span class="hljs-number">3.4</span>f, <span class="hljs-number">6.7</span>f),
+  <span class="hljs-type">Row</span>(<span class="hljs-number">1.2</span>f, <span class="hljs-number">9.7</span>f))
+<span class="hljs-keyword">val</span> frame = <span class="hljs-type">DefaultLeapFrame</span>(schema, dataset)
+
+<span class="hljs-comment">// Transform the leap frame and make sure it behaves as expected</span>
+<span class="hljs-keyword">val</span> data = transformer.transform(frame).get.dataset
+assert(data(<span class="hljs-number">0</span>)(<span class="hljs-number">2</span>).asInstanceOf[<span class="hljs-type">Tensor</span>[<span class="hljs-type">Float</span>]].get(<span class="hljs-number">0</span>).get == <span class="hljs-number">5.6</span>f * <span class="hljs-number">7.9</span>f)
+assert(data(<span class="hljs-number">1</span>)(<span class="hljs-number">2</span>).asInstanceOf[<span class="hljs-type">Tensor</span>[<span class="hljs-type">Float</span>]].get(<span class="hljs-number">0</span>).get == <span class="hljs-number">3.4</span>f * <span class="hljs-number">6.7</span>f)
+assert(data(<span class="hljs-number">2</span>)(<span class="hljs-number">2</span>).asInstanceOf[<span class="hljs-type">Tensor</span>[<span class="hljs-type">Float</span>]].get(<span class="hljs-number">0</span>).get == <span class="hljs-number">1.2</span>f * <span class="hljs-number">9.7</span>f)
+
+<span class="hljs-comment">// Cleanup the transformer</span>
+<span class="hljs-comment">// This closes the TF session and graph resources</span>
+transformer.close()
+</code></pre>
+<p>For more information on how Tensorflow integration works:</p>
+<ol>
+<li>Details on data conversion and integration <a href="../tensorflow/mleap-integration.html">here</a>.</li>
+<li>How we serialize MLeap bundles with Tensorflow graphs <a href="../tensorflow/bundle-serialization.html">here</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="scikit-learn.html" class="navigation navigation-prev " aria-label="Previous page: Getting Started with Scikit-learn">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="building.html" class="navigation navigation-next " aria-label="Next page: Building from Source">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Getting Started with Tensorflow","level":"1.1.6","depth":2,"next":{"title":"Building from Source","level":"1.1.7","depth":2,"path":"getting-started/building.md","ref":"getting-started/building.md","articles":[]},"previous":{"title":"Getting Started with Scikit-learn","level":"1.1.5","depth":2,"path":"getting-started/scikit-learn.md","ref":"getting-started/scikit-learn.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"getting-started/tensorflow.md","mtime":"2019-12-17T02:18:15.772Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T02:24:18.768Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
