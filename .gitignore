@@ -3,3 +3,4 @@ _book/
 gitbook/
 search_index.json
 .idea/
+node_modules/
