@@ -323,8 +323,6 @@ In order to add the custom transformer to the default Spark registry, we will ad
 my.domain.mleap.spark.ops = ["my.domain.spark.ops.StringMapOp"]
 
 // include the custom transformers ops we have defined to the default Spark registries
-ml.combust.mleap.spark.registry.v20.ops += my.domain.mleap.spark.ops
-ml.combust.mleap.spark.registry.v21.ops += my.domain.mleap.spark.ops
-ml.combust.mleap.spark.registry.v22.ops += my.domain.mleap.spark.ops
+ml.combust.mleap.spark.registry.default.ops += my.domain.mleap.spark.ops
 ```
 
