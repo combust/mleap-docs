@@ -194,7 +194,21 @@ Coming Soon
 
 ### Deserializing
 
-Coming Soon
+With a JSON format:
+
+```python
+model = pipeline.deserialize_from_bundle("/tmp/mleap-bundle", "model.json.node")
+```
+
+If you want to get the model back as a logistic regression:
+
+```python
+from mleap.sklearn.logistic import LogisticRegression
+
+logistic_regression = LogisticRegression()
+
+model = logistic_regression.deserialize_from_bundle("/tmp/mleap-bundle", "model.json.node")
+```
 
 ## Demos
 
