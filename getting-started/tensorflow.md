@@ -54,12 +54,15 @@ graph.opBuilder("Mul", "MyResult").
   build()
 
 // Build the MLeap model wrapper around the Tensorflow graph
-val model = TensorflowModel(graph,
+val model = TensorflowModel(
+  Some(graph),
   // Must specify inputs and input types for converting to TF tensors
   inputs = Seq(("InputA", TensorType.Float()), ("InputB", TensorType.Float())),
   // Likewise, specify the output values so we can convert back to MLeap
   // Types properly
-  outputs = Seq(("MyResult", TensorType.Float())))
+  outputs = Seq(("MyResult", TensorType.Float())),
+  graphBytes = graph.toGraphDef
+)
 
 // Connect our Leap Frame values to the Tensorflow graph
 // Inputs and outputs
