@@ -15,13 +15,13 @@ Scala compatibility with Spark.
 ### Using SBT
 
 ```sbt
-libraryDependencies += "ml.combust.mleap" %% "mleap-spark" % "0.16.0"
+libraryDependencies += "ml.combust.mleap" %% "mleap-spark" % "0.17.0"
 ```
 
 To use MLeap extensions to Spark:
 
 ```sbt
-libraryDependencies += "ml.combust.mleap" %% "mleap-spark-extension" % "0.16.0"
+libraryDependencies += "ml.combust.mleap" %% "mleap-spark-extension" % "0.17.0"
 ```
 
 ### Using Maven
@@ -30,7 +30,7 @@ libraryDependencies += "ml.combust.mleap" %% "mleap-spark-extension" % "0.16.0"
 <dependency>
   <groupId>ml.combust.mleap</groupId>
   <artifactId>mleap-spark_2.11</artifactId>
-  <version>0.16.0</version>
+  <version>0.17.0</version>
 </dependency>
 ```
 
@@ -40,7 +40,7 @@ To use MLeap extensions to Spark:
 <dependency>
   <groupId>ml.combust.mleap</groupId>
   <artifactId>mleap-spark-extension_2.11</artifactId>
-  <version>0.16.0</version>
+  <version>0.17.0</version>
 </dependency>
 ```
 
