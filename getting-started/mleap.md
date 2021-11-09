@@ -8,14 +8,13 @@ add it to your project.
 ## Adding MLeap to Your Project
 
 MLeap and its snapshots are hosted on Maven Central and so should be
-easily accessible via a maven build file or SBT. MLeap is currently
-cross-compiled for Scala versions 2.11 and 2.12. We try to maintain
+easily accessible via a maven build file or SBT. MLeap is currently compiled for Scala version 2.12. We try to maintain
 Scala compatibility with Spark.
 
 ### Using SBT
 
 ```sbt
-libraryDependencies += "ml.combust.mleap" %% "mleap-runtime" % "0.17.0"
+libraryDependencies += "ml.combust.mleap" %% "mleap-runtime" % "0.18.1"
 ```
 
 ### Using Maven
@@ -23,8 +22,8 @@ libraryDependencies += "ml.combust.mleap" %% "mleap-runtime" % "0.17.0"
 ```pom
 <dependency>
   <groupId>ml.combust.mleap</groupId>
-  <artifactId>mleap-runtime_2.11</artifactId>
-  <version>0.17.0</version>
+  <artifactId>mleap-runtime_2.12</artifactId>
+  <version>0.18.1</version>
 </dependency>
 ```
 
