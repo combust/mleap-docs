@@ -8,20 +8,19 @@ rest models and unary/binary math transformations.
 ## Adding MLeap Spark to Your Project
 
 MLeap Spark and its snapshots are hosted on Maven Central and so should be
-easily accessible via a maven build file or SBT. MLeap is currently
-cross-compiled for Scala versions 2.10 and 2.11. We try to maintain
+easily accessible via a maven build file or SBT. MLeap is currently compiled for Scala version 2.12. We try to maintain
 Scala compatibility with Spark.
 
 ### Using SBT
 
 ```sbt
-libraryDependencies += "ml.combust.mleap" %% "mleap-spark" % "0.17.0"
+libraryDependencies += "ml.combust.mleap" %% "mleap-spark" % "0.18.1"
 ```
 
 To use MLeap extensions to Spark:
 
 ```sbt
-libraryDependencies += "ml.combust.mleap" %% "mleap-spark-extension" % "0.17.0"
+libraryDependencies += "ml.combust.mleap" %% "mleap-spark-extension" % "0.18.1"
 ```
 
 ### Using Maven
@@ -29,8 +28,8 @@ libraryDependencies += "ml.combust.mleap" %% "mleap-spark-extension" % "0.17.0"
 ```pom
 <dependency>
   <groupId>ml.combust.mleap</groupId>
-  <artifactId>mleap-spark_2.11</artifactId>
-  <version>0.17.0</version>
+  <artifactId>mleap-spark_2.12</artifactId>
+  <version>0.18.1</version>
 </dependency>
 ```
 
@@ -39,8 +38,8 @@ To use MLeap extensions to Spark:
 ```pom
 <dependency>
   <groupId>ml.combust.mleap</groupId>
-  <artifactId>mleap-spark-extension_2.11</artifactId>
-  <version>0.17.0</version>
+  <artifactId>mleap-spark-extension_2.12</artifactId>
+  <version>0.18.1</version>
 </dependency>
 ```
 
