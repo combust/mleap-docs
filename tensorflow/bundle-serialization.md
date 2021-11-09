@@ -10,7 +10,7 @@ graph definition file.
 ## Sample MLeap Tensorflow Bundle
 
 Download an example MLeap Bundle that uses Tensorflow to add two floats
-together: [MLeap Tensorflow Bundle](../assets/bundles/tensorflow-model.zip).
+together: [MLeap Tensorflow Bundle](../assets/bundles/tensorflow-bundle.zip).
 
 NOTE: right click and "Save As...", Gitbook prevents directly clicking
 on the link.
