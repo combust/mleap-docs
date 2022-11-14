@@ -40,12 +40,12 @@ Kernel config files are typically located in `/usr/local/share/jupyter/kernels/a
 Go ahead and add or modify `__TOREE_SPARK_OPTS__` like so:
 
 ```bash
-"__TOREE_SPARK_OPTS__": "--packages com.databricks:spark-avro_2.11:3.0.1,ml.combust.mleap:mleap-spark_2.12:0.21.0,"
+"__TOREE_SPARK_OPTS__": "--packages com.databricks:spark-avro_2.11:3.0.1,ml.combust.mleap:mleap-spark_2.12:0.20.0,"
 ```
 
 An alternative way is to use AddDeps Magics, but we've run into dependency collisions, so do so at your own risk:
 
-`%AddDeps ml.combust.mleap mleap-spark_2.12 0.21.0 --transitive`
+`%AddDeps ml.combust.mleap mleap-spark_2.12 0.20.0 --transitive`
 
 ### Launch Notebook with MLeap for PySpark
 
