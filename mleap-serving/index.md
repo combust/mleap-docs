@@ -100,6 +100,6 @@ Example models:
 2. [AirBnB Random Forest](https://github.com/combust/mleap/raw/master/mleap-benchmark/src/main/resources/models/airbnb.model.rf.zip)
 
 Example leap frames:
-1. [AirBnB Leap Frame](https://s3-us-west-2.amazonaws.com/mleap-demo/frame.airbnb.json)
+1. [AirBnB Leap Frame](https://github.com/combust/mleap/blob/master/mleap-executor-testkit/src/main/resources/leap_frame/frame.airbnb.json)
 
 See the README.md in [mleap-executor](https://github.com/combust/mleap/tree/master/mleap-executor) project about using gRPC instead of HTTP.
